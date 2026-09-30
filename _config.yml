@@ -1,0 +1,33 @@
+title: AI4Health Lab
+tagline: Artificial Intelligence for Health · University at Albany, SUNY
+description: >-
+  The AI4Health Research Lab at the University at Albany, SUNY develops machine
+  learning methods for biomedical signals, medical imaging and digital health.
+url: "https://ualbany-ai4health.github.io"
+baseurl: ""
+lang: en
+
+nav:
+  - { title: Home, url: / }
+  - { title: Research, url: /research/ }
+  - { title: People, url: /people/ }
+  - { title: Publications, url: /publications/ }
+  - { title: Contact, url: /contact/ }
+
+contact:
+  email: asubasi@albany.edu
+  department: Department of Information Sciences and Technology
+  college: College of Emergency Preparedness, Homeland Security and Cybersecurity (CEHC)
+  address: University at Albany, SUNY · 1220 Washington Avenue, Albany, NY 12226
+  github: ualbany-ai4health
+
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

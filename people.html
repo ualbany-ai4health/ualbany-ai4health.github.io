@@ -1,0 +1,33 @@
+---
+layout: page
+title: People
+permalink: /people/
+---
+{% assign groups = "director|Director,postdocs|Postdoctoral researchers,students|Students,alumni|Alumni" | split: "," %}
+{% for g in groups %}
+  {% assign parts = g | split: "|" %}
+  {% assign members = site.data.people[parts[0]] %}
+  {% if members and members.size > 0 %}
+  <h2 class="group-title">{{ parts[1] }}</h2>
+  <div class="people">
+    {% for m in members %}
+    <article class="person">
+      {% if m.photo %}
+        <img class="avatar" src="{{ m.photo | relative_url }}" alt="{{ m.name }}">
+      {% else %}
+        <div class="avatar avatar-initials" aria-hidden="true">{{ m.initials }}</div>
+      {% endif %}
+      <div>
+        <h3>{{ m.name }}</h3>
+        <p class="role">{{ m.role }}</p>
+        {% if m.unit %}<p class="muted small">{{ m.unit }}</p>{% endif %}
+        {% if m.bio %}<p>{{ m.bio }}</p>{% endif %}
+        {% if m.links and m.links.size > 0 %}
+        <p class="links">{% for l in m.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endfor %}

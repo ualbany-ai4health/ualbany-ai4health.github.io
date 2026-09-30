@@ -1,0 +1,56 @@
+---
+layout: default
+title: AI4Health Lab
+---
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow">University at Albany, SUNY · CEHC</p>
+    <h1>Artificial intelligence that holds up in the clinic.</h1>
+    <p class="lead">
+      The AI4Health Research Lab builds machine learning methods for biomedical
+      signals, medical imaging and digital health, and tests them the way they
+      will be used: on new patients, new sites and new devices.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/research/' | relative_url }}">Our research</a>
+      <a class="btn btn-ghost" href="{{ '/publications/' | relative_url }}">Publications</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section-title">What we work on</h2>
+    <div class="grid cards">
+      {% for r in site.data.research %}
+      <a class="card" href="{{ '/research/' | relative_url }}#{{ r.key }}">
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.short }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap split">
+    <div>
+      <h2 class="section-title">Recent publications</h2>
+      <ul class="pubs">
+        {% for p in site.data.publications.articles limit:4 %}
+          {% include publication.html p=p %}
+        {% endfor %}
+      </ul>
+      <p><a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a></p>
+    </div>
+    <aside class="panel">
+      <h2 class="section-title">Join us</h2>
+      <p>
+        We welcome students and collaborators interested in machine learning for
+        health. If you would like to work with us, write to the lab director with
+        a short note on your background and interests.
+      </p>
+      <p><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch</a></p>
+    </aside>
+  </div>
+</section>

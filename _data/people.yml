@@ -1,0 +1,29 @@
+# Lab members. Add a photo by placing it in assets/people/ and setting `photo:`.
+# Without a photo, the initials are shown instead.
+director:
+- name: "Abdulhamit Subasi"
+  initials: "AS"
+  role: "Lab Director · Associate Professor"
+  unit: "Department of Information Sciences and Technology, CEHC"
+  bio: >-
+    Works on artificial intelligence, machine learning, digital-twin modelling and
+    healthcare data analysis. Author of more than 280 journal and conference papers
+    and of two Elsevier textbooks on machine learning for biomedical signals and
+    data analysis.
+  links:
+    - { label: "Faculty page", url: "https://www.albany.edu/cehc/faculty/abdulhamit-subasi" }
+    - { label: "Google Scholar", url: "https://scholar.google.com/citations?user=W6FLhskAAAAJ" }
+    - { label: "ORCID", url: "https://orcid.org/0000-0001-7630-4084" }
+    - { label: "Email", url: "mailto:asubasi@albany.edu" }
+
+postdocs:
+- name: "Osman Yildiz"
+  initials: "OY"
+  role: "Postdoctoral Associate"
+  unit: "AI4Health Lab"
+  bio: >-
+    Deep learning for biomedical signals and medical imaging.
+  links: []
+
+students: []
+alumni: []

@@ -1,0 +1,79 @@
+# Journal articles, newest first. To add one, copy a block and edit it.
+# Every entry below was checked against its Crossref record (DOI).
+articles:
+- title: "AttentionMS-Net: An Attention-Enhanced Multi-Scale Framework for Alzheimer’s Disease Classification with Subject-Level Validation"
+  authors: "Osman Yildiz, Abdulhamit Subasi"
+  venue: "Applied Sciences"
+  year: 2026
+  doi: "10.3390/app16094338"
+- title: "ContextualGraph-LLM: A multimodal framework for enhanced Darknet traffic analysis"
+  authors: "Yujung Hwang, Furkan Kurt, Faruk Curebal, Omer Keskin, Abdulhamit Subasi"
+  venue: "Expert Systems with Applications"
+  year: 2026
+  doi: "10.1016/j.eswa.2025.129298"
+- title: "Wearable-Based Emotion Recognition Using Electrocardiogram and Galvanic Skin Response and Instrumentation Audit: A Systematic Review"
+  authors: "Ayse Kosal Bulbul, Muhammad Irfan, Maria K. Jaakkola, Abdulhamit Subasi, Riku Klén"
+  venue: "IEEE Transactions on Instrumentation and Measurement"
+  year: 2026
+  doi: "10.1109/tim.2026.3701198"
+- title: "A Novel NICU Sleep State Stratification: Multiperspective Features, Adaptive Feature Selection and Ensemble Model"
+  authors: "Muhammad Irfan, Abdulhamit Subasi, Zhenning Tang, Laishuan Wang, Yan Xu, Chen Chen, Tomi Westerlund, Wei Chen"
+  venue: "IEEE Transactions on Biomedical Engineering"
+  year: 2025
+  doi: "10.1109/tbme.2025.3549584"
+- title: "Identifying Risk Factors of Substance Use in Finland: A Machine Learning Approach"
+  authors: "Ali Ünlü, Pekka Hakkarainen, Karoliina Karjalainen, Tuukka Tammi, Abdulhamit Subasi"
+  venue: "Substance Use & Misuse"
+  year: 2025
+  doi: "10.1080/10826084.2025.2516738"
+- title: "FiboNeXt: Investigations for Alzheimer’s Disease detection using MRI"
+  authors: "Turker Tuncer, Sengul Dogan, Abdulhamit Subasi"
+  venue: "Biomedical Signal Processing and Control"
+  year: 2025
+  doi: "10.1016/j.bspc.2024.107422"
+- title: "Time Sequence Deep Learning Model for Ubiquitous Tabular Data with Unique 3D Tensors Manipulation"
+  authors: "Adaleta Gicic, Dženana Đonko, Abdulhamit Subasi"
+  venue: "Entropy"
+  year: 2024
+  doi: "10.3390/e26090783"
+- title: "EEG-based schizophrenia classification using penalized sequential dictionary learning in the context of mobile healthcare"
+  authors: "Usman Haider, Muhammad Hanif, Ahmar Rashid, Saeed Mian Qaisar, Abdulhamit Subasi"
+  venue: "Biomedical Signal Processing and Control"
+  year: 2024
+  doi: "10.1016/j.bspc.2023.105856"
+- title: "An Ensemble Voting Approach With Innovative Multi-Domain Feature Fusion for Neonatal Sleep Stratification"
+  authors: "Muhammad Irfan, Hafza Ayesha Siddiqa, Abdelwahed Nahliis, Chen Chen, Yan Xu, Laishuan Wang, Anum Nawaz, Abdulhamit Subasi, Tomi Westerlund, Wei Chen"
+  venue: "IEEE Access"
+  year: 2024
+  doi: "10.1109/access.2023.3346059"
+
+# Books (authored or edited by the lab director), newest first.
+books:
+- title: "Applications of Artificial Intelligence in Healthcare and Biomedicine"
+  role: "Editor"
+  publisher: "Elsevier"
+  year: 2024
+- title: "Artificial Intelligence and Multimodal Signal Processing in Human-Machine Interaction"
+  role: "Co-editor (with S. Mian Qaisar and H. Nisar)"
+  publisher: "Elsevier"
+  year: 2024
+- title: "Artificial Intelligence Applications for Brain-Computer Interfaces"
+  role: "Co-editor"
+  publisher: "Elsevier"
+  year: 2024
+- title: "Applications of Artificial Intelligence in Medical Imaging"
+  role: "Editor"
+  publisher: "Elsevier"
+  year: 2023
+- title: "Advances in Non-Invasive Biomedical Signal Sensing and Processing with Machine Learning"
+  role: "Co-editor (with S. Mian Qaisar and H. Nisar)"
+  publisher: "Springer"
+  year: 2023
+- title: "Practical Machine Learning for Data Analysis Using Python"
+  role: "Author"
+  publisher: "Elsevier"
+  year: 2020
+- title: "Practical Guide for Biomedical Signals Analysis Using Machine Learning Techniques: A MATLAB Based Approach"
+  role: "Author"
+  publisher: "Elsevier"
+  year: 2019

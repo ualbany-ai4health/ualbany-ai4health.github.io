@@ -1,0 +1,40 @@
+# Research themes shown on the home and research pages.
+- key: signals
+  title: "Biomedical signals"
+  short: "EEG, ECG, EMG and sleep recordings"
+  text: >-
+    Machine learning on physiological time series: sleep staging (including
+    newborns in intensive care), EEG-based detection of neurological and
+    psychiatric conditions, and ECG classification.
+- key: imaging
+  title: "Medical imaging"
+  short: "MRI, CT and histopathology"
+  text: >-
+    Deep learning models for brain MRI and CT, with a focus on Alzheimer's
+    disease, stroke and haemorrhage, and on validation that holds at the level
+    of the patient rather than the image slice.
+- key: wearables
+  title: "Wearables and affective computing"
+  short: "Emotion and stress from body sensors"
+  text: >-
+    Recognising emotional and stress states from wearable sensors such as ECG
+    and skin conductance, and auditing how the measurement hardware shapes the
+    results.
+- key: neuro
+  title: "Neurodegenerative disease"
+  short: "Alzheimer's disease and dementia"
+  text: >-
+    Detection and staging of Alzheimer's disease from imaging and physiological
+    data, aimed at earlier diagnosis and better care.
+- key: genai
+  title: "Generative AI and LLMs for health"
+  short: "Language models and multimodal reasoning"
+  text: >-
+    Large language models and multimodal frameworks that combine structured
+    data, signals and text for clinical and public-health questions.
+- key: population
+  title: "Population health data"
+  short: "Risk factors from survey and registry data"
+  text: >-
+    Machine learning on population-scale data, for example identifying risk
+    factors of substance use.
