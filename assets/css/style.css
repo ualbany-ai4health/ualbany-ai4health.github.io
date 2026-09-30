@@ -60,7 +60,7 @@ p { margin: 0 0 1em; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
 .brand-mark {
-  display: inline-grid; place-items: center;
+  display: inline-flex; align-items: center; justify-content: center; white-space: nowrap; flex: none;
   width: 44px; height: 44px; border-radius: 10px;
   background: var(--purple); color: #fff;
   font-weight: 700; font-size: .78rem; letter-spacing: .02em;
