@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<section class="page-head">
+<section class="page-head {{ page.head_class }}">
   <div class="wrap">
     {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
     <h1>{{ page.heading | default: page.title }}</h1>
