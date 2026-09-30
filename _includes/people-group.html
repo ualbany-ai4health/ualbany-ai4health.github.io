@@ -1,0 +1,23 @@
+{% if include.members and include.members.size > 0 %}
+<h2 class="group-title">{{ include.title }}</h2>
+<div class="people">
+  {% for m in include.members %}
+  <article class="person">
+    {% if m.photo %}
+      <img class="avatar" src="{{ m.photo | relative_url }}" alt="{{ m.name }}">
+    {% else %}
+      <div class="avatar avatar-initials" aria-hidden="true">{{ m.initials }}</div>
+    {% endif %}
+    <div>
+      <h3>{{ m.name }}</h3>
+      <p class="role">{{ m.role }}</p>
+      {% if m.unit %}<p class="muted small">{{ m.unit }}</p>{% endif %}
+      {% if m.bio %}<p>{{ m.bio }}</p>{% endif %}
+      {% if m.links and m.links.size > 0 %}
+      <p class="links">{% for l in m.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+      {% endif %}
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% endif %}
