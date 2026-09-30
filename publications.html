@@ -1,28 +1,41 @@
 ---
 layout: page
 title: Publications
+kicker: Publications
+heading: Papers and books.
 permalink: /publications/
 lead: >-
-  Selected recent work from the lab. For the full list, see the lab director's
-  Google Scholar profile.
+  Selected recent work from the lab. The complete list is on the lab
+  director's Google Scholar profile.
 ---
-{% assign by_year = site.data.publications.articles | group_by: "year" | sort: "name" | reverse %}
-{% for y in by_year %}
-<h2 class="year">{{ y.name }}</h2>
-<ul class="pubs">
-  {% for p in y.items %}{% include publication.html p=p %}{% endfor %}
-</ul>
-{% endfor %}
+<section class="section light">
+  <div class="wrap">
+    {% assign by_year = site.data.publications.articles | group_by: "year" | sort: "name" | reverse %}
+    {% for y in by_year %}
+    <div class="year-block">
+      <h2 class="year-head">{{ y.name }}</h2>
+      <div class="pubs">
+        {% for p in y.items %}{% include publication.html p=p %}{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    <a class="more" href="https://scholar.google.com/citations?user=W6FLhskAAAAJ">Full list on Google Scholar →</a>
+  </div>
+</section>
 
-<h2 class="year">Books</h2>
-<ul class="pubs">
-  {% for b in site.data.publications.books %}
-  <li class="pub">
-    <span class="pub-title">{{ b.title }}</span>
-    <span class="pub-authors">Abdulhamit Subasi · {{ b.role }}</span>
-    <span class="pub-venue"><em>{{ b.publisher }}</em>, {{ b.year }}</span>
-  </li>
-  {% endfor %}
-</ul>
-
-<p class="muted"><a href="https://scholar.google.com/citations?user=W6FLhskAAAAJ">Full list on Google Scholar →</a></p>
+<section class="section dark">
+  <div class="wrap">
+    <p class="kicker">Books</p>
+    <h2 class="section-title">Textbooks and edited volumes.</h2>
+    <p class="intro">Written or edited by the lab director, Abdulhamit Subasi.</p>
+    <div class="books">
+      {% for b in site.data.publications.books %}
+      <article class="book">
+        <span class="unit">{{ b.publisher }} · {{ b.year }}</span>
+        <span class="book-title">{{ b.title }}</span>
+        <span class="book-meta">{{ b.role }}</span>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

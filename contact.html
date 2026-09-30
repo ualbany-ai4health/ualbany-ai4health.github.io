@@ -1,27 +1,27 @@
 ---
 layout: page
 title: Contact
+kicker: Contact
+heading: Get in touch.
 permalink: /contact/
+lead: >-
+  For collaborations, student positions and questions about our work, write to
+  the lab director.
 ---
-<div class="split">
-  <div>
-    <h2 class="group-title">Lab director</h2>
-    <p>
-      <strong>Abdulhamit Subasi</strong><br>
-      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
-    </p>
-    <h2 class="group-title">Address</h2>
-    <p>
-      {{ site.contact.department }}<br>
-      {{ site.contact.college }}<br>
-      {{ site.contact.address }}
-    </p>
+<section class="section light">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Lab director</h2>
+      <p class="big">Abdulhamit Subasi</p>
+      <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+    </div>
+    <div>
+      <h2>Address</h2>
+      <p>{{ site.contact.department }}<br>{{ site.contact.college }}<br>{{ site.contact.address }}</p>
+    </div>
+    <div>
+      <h2>Prospective students</h2>
+      <p>Include a short CV, the topics from our <a href="{{ '/research/' | relative_url }}">research page</a> that interest you, and any code or papers you would like us to see.</p>
+    </div>
   </div>
-  <aside class="panel">
-    <h2 class="group-title">Prospective students</h2>
-    <p>
-      Please include a short CV, the topics from our <a href="{{ '/research/' | relative_url }}">research page</a>
-      that interest you, and any code or papers you would like us to see.
-    </p>
-  </aside>
-</div>
+</section>

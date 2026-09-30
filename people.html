@@ -1,9 +1,18 @@
 ---
 layout: page
 title: People
+kicker: People
+heading: The people behind the models.
 permalink: /people/
+lead: >-
+  Researchers working on machine learning for biomedical signals, medical
+  imaging and digital health.
 ---
-{% include people-group.html title="Director" members=site.data.people.director %}
-{% include people-group.html title="Postdoctoral researchers" members=site.data.people.postdocs %}
-{% include people-group.html title="Students" members=site.data.people.students %}
-{% include people-group.html title="Alumni" members=site.data.people.alumni %}
+<section class="section light">
+  <div class="wrap">
+    {% include people-group.html title="Director" members=site.data.people.director %}
+    {% include people-group.html title="Postdoctoral researchers" members=site.data.people.postdocs %}
+    {% include people-group.html title="Students" members=site.data.people.students %}
+    {% include people-group.html title="Alumni" members=site.data.people.alumni %}
+  </div>
+</section>

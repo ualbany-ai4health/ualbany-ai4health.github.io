@@ -1,56 +1,77 @@
 ---
 layout: default
 title: AI4Health Lab
+scripts:
+  - /assets/js/psg.js
 ---
 <section class="hero">
-  <div class="wrap hero-inner">
-    <p class="eyebrow">University at Albany, SUNY · CEHC</p>
-    <h1>Artificial intelligence that holds up in the clinic.</h1>
-    <p class="lead">
-      The AI4Health Research Lab builds machine learning methods for biomedical
-      signals, medical imaging and digital health, and tests them the way they
-      will be used: on new patients, new sites and new devices.
-    </p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ '/research/' | relative_url }}">Our research</a>
-      <a class="btn btn-ghost" href="{{ '/publications/' | relative_url }}">Publications</a>
+  <div class="monitor">
+    <canvas id="psg" role="img" aria-label="Simulated overnight sleep recording with five channels; a model marks sleep spindles and reads the sleep stage"></canvas>
+    <div class="fade"></div>
+    <div class="hero-copy">
+      <div class="wrap">
+        <p class="kicker">AI4Health Lab · University at Albany</p>
+        <h1>Teaching machines to read the body.</h1>
+        <p class="lede">We build models that turn EEG, ECG, muscle and imaging data into clinical answers, and test them on patients they have never seen.</p>
+      </div>
+    </div>
+    <div class="sim-note">SIMULATED RECORDING · ILLUSTRATION</div>
+  </div>
+  <div class="readout" aria-hidden="true">
+    <div class="wrap">
+      <div>
+        <div class="ro-label">Model reads</div>
+        <div class="ro-stage" id="stage">N2</div>
+        <div class="ro-conf" id="conf">p = 0.91</div>
+      </div>
+      <div class="hyp"><canvas id="hypc"></canvas></div>
+      <div class="ro-meta">
+        <div id="clock">02:14:30</div>
+        <div id="epoch">epoch 269 / 960</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section dark">
   <div class="wrap">
-    <h2 class="section-title">What we work on</h2>
-    <div class="grid cards">
+    <p class="kicker">Research</p>
+    <h2 class="section-title">Six kinds of data, one standard of evidence.</h2>
+    <p class="intro">Every model we build is tested on patients, hospitals or devices it has never seen, because that is where clinical AI usually breaks.</p>
+    <div class="tiles">
       {% for r in site.data.research %}
-      <a class="card" href="{{ '/research/' | relative_url }}#{{ r.key }}">
-        <h3>{{ r.title }}</h3>
-        <p>{{ r.short }}</p>
+      <a class="tile" href="{{ '/research/' | relative_url }}#{{ r.key }}">
+        <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy">
+        <div class="tile-body">
+          <span class="unit">{{ r.unit }}</span>
+          <h3>{{ r.title }}</h3>
+          <p>{{ r.short }}</p>
+        </div>
       </a>
       {% endfor %}
     </div>
+    <p class="credit">Illustrations generated with ChatGPT for the AI4Health Lab. They depict research themes, not study data.</p>
   </div>
 </section>
 
-<section class="section section-alt">
-  <div class="wrap split">
-    <div>
-      <h2 class="section-title">Recent publications</h2>
-      <ul class="pubs">
-        {% for p in site.data.publications.articles limit:4 %}
-          {% include publication.html p=p %}
-        {% endfor %}
-      </ul>
-      <p><a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a></p>
+<section class="section light">
+  <div class="wrap">
+    <p class="kicker">Recent publications</p>
+    <h2 class="section-title">What we published lately.</h2>
+    <div class="pubs">
+      {% for p in site.data.publications.articles limit:3 %}{% include publication.html p=p %}{% endfor %}
     </div>
-    <aside class="panel">
-      <h2 class="section-title">Join us</h2>
-      <p>
-        We welcome students and collaborators interested in machine learning for
-        health. If you would like to work with us, write to the lab director with
-        a short note on your background and interests.
-      </p>
-      <p><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get in touch</a></p>
-    </aside>
+    <a class="more" href="{{ '/publications/' | relative_url }}">All publications →</a>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="wrap join">
+    <div>
+      <p class="kicker">Join us</p>
+      <h2 class="section-title">Work on models that have to hold up in the clinic.</h2>
+      <p>We welcome students and collaborators interested in machine learning for health. Write to the lab director with a short note on your background and the problems you want to work on.</p>
+    </div>
+    <div><a class="btn" href="{{ '/contact/' | relative_url }}">Get in touch</a></div>
   </div>
 </section>

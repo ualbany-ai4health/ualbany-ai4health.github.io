@@ -1,5 +1,8 @@
-<li class="pub">
-  <span class="pub-title">{% if include.p.doi %}<a href="https://doi.org/{{ include.p.doi }}">{{ include.p.title }}</a>{% else %}{{ include.p.title }}{% endif %}</span>
-  <span class="pub-authors">{{ include.p.authors }}</span>
-  <span class="pub-venue"><em>{{ include.p.venue }}</em>, {{ include.p.year }}{% if include.p.doi %} · <span class="doi">doi:{{ include.p.doi }}</span>{% endif %}</span>
-</li>
+{% if include.p.doi %}<a class="pub" href="https://doi.org/{{ include.p.doi }}">{% else %}<div class="pub">{% endif %}
+  <span class="pub-year">{{ include.p.year }}</span>
+  <span class="pub-main">
+    <span class="pub-title">{{ include.p.title }}</span>
+    <span class="pub-authors">{{ include.p.authors }}</span>
+  </span>
+  <span class="pub-venue">{{ include.p.venue }}</span>
+{% if include.p.doi %}</a>{% else %}</div>{% endif %}

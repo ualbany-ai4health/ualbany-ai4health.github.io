@@ -1,18 +1,28 @@
 ---
 layout: page
 title: Research
+kicker: Research
+heading: Six kinds of data, one standard of evidence.
 permalink: /research/
 lead: >-
-  We develop machine learning methods for health data and put the same effort
+  We develop machine learning methods for health data and put as much effort
   into validation as into modelling, so that results carry over to patients a
   model has never seen.
 ---
-<div class="research-list">
-  {% for r in site.data.research %}
-  <article class="research-item" id="{{ r.key }}">
-    <h2>{{ r.title }}</h2>
-    <p class="muted">{{ r.short }}</p>
-    <p>{{ r.text }}</p>
-  </article>
-  {% endfor %}
-</div>
+<section class="section light">
+  <div class="wrap">
+    <div class="themes">
+      {% for r in site.data.research %}
+      <article class="theme" id="{{ r.key }}">
+        <div>
+          <span class="unit">{{ r.unit }}</span>
+          <h2>{{ r.title }}</h2>
+          <p>{{ r.text }}</p>
+        </div>
+        <div class="theme-img"><img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy"></div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="credit" style="color: var(--paper-muted); margin-top: 72px;">Illustrations generated with ChatGPT for the AI4Health Lab. They depict research themes, not study data.</p>
+  </div>
+</section>
