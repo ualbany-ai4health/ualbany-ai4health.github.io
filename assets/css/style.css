@@ -68,7 +68,7 @@ h2.section-title { font-weight: 800; font-size: clamp(30px, 3.8vw, 52px); line-h
 .dark { background: var(--ink); color: var(--text); }
 .light { background: var(--paper); color: var(--paper-text); }
 .deep { background: var(--ink-2); color: var(--text); }
-.page-head.deep { border-bottom: 0; }
+.page-head.deep { border-bottom: 0; background: var(--ink-2); }
 .more { display: inline-block; margin-top: 32px; font: 500 13px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--purple); }
 .dark .more { color: var(--gold); }
 .more:hover { text-decoration: underline; text-underline-offset: 4px; }
