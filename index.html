@@ -10,7 +10,7 @@ scripts:
     <div class="fade"></div>
     <div class="hero-copy">
       <div class="wrap">
-        <p class="kicker">AI4Health Lab · University at Albany</p>
+        <div class="pill"><i></i>RECORDING · <span id="pill-epoch">EPOCH 270 / 960 · N2</span></div>
         <h1>Teaching machines to read the body.</h1>
         <p class="lede">We build models that turn EEG, ECG, muscle and imaging data into clinical answers, and test them on patients they have never seen.</p>
       </div>
@@ -36,12 +36,13 @@ scripts:
 <section class="section dark">
   <div class="wrap">
     <p class="kicker">Research</p>
-    <h2 class="section-title">Six kinds of data, one standard of evidence.</h2>
+    <h2 class="section-title focus">Six kinds of data, one standard of <span class="gold">evidence.</span></h2>
     <p class="intro">Every model we build is tested on patients, hospitals or devices it has never seen, because that is where clinical AI usually breaks.</p>
     <div class="tiles">
       {% for r in site.data.research %}
-      <a class="tile" href="{{ '/research/' | relative_url }}#{{ r.key }}">
+      <a class="tile scanned" href="{{ '/research/' | relative_url }}#{{ r.key }}">
         <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy">
+        <span class="scan"></span>
         <div class="tile-body">
           <span class="unit">{{ r.unit }}</span>
           <h3>{{ r.title }}</h3>
@@ -51,13 +52,25 @@ scripts:
       {% endfor %}
     </div>
     <p class="credit">Illustrations generated with ChatGPT for the AI4Health Lab. They depict research themes, not study data.</p>
+
+    <div class="record">
+      <p class="kicker">Track record</p>
+      <h2 class="section-title focus">A record built over <span class="gold">25 years.</span></h2>
+      <div class="stats">
+        <div class="stat"><div class="n" data-to="280" data-suffix="+">280+</div><div class="l">Journal and conference papers</div></div>
+        <div class="stat"><div class="n" data-to="7">7</div><div class="l">Books written or edited</div></div>
+        <div class="stat"><div class="n" data-to="10100" data-prefix="~">~10,100</div><div class="l">Scopus citations</div></div>
+        <div class="stat"><div class="n" data-to="48">48</div><div class="l">Scopus h-index</div></div>
+      </div>
+      <p class="stats-src">Lab director Abdulhamit Subasi's career record, from his CV.</p>
+    </div>
   </div>
 </section>
 
 <section class="section light">
   <div class="wrap">
     <p class="kicker">Recent publications</p>
-    <h2 class="section-title">What we published lately.</h2>
+    <h2 class="section-title focus">What we published <span class="gold">lately.</span></h2>
     <div class="pubs">
       {% for p in site.data.publications.articles limit:3 %}{% include publication.html p=p %}{% endfor %}
     </div>
@@ -69,7 +82,7 @@ scripts:
   <div class="wrap join">
     <div>
       <p class="kicker">Join us</p>
-      <h2 class="section-title">Work on models that have to hold up in the clinic.</h2>
+      <h2 class="section-title focus">Work on models that have to hold up in the <span class="gold">clinic.</span></h2>
       <p>We welcome students and collaborators interested in machine learning for health. Write to the lab director with a short note on your background and the problems you want to work on.</p>
     </div>
     <div><a class="btn" href="{{ '/contact/' | relative_url }}">Get in touch</a></div>

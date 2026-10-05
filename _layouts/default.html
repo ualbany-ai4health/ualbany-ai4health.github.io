@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <script>document.documentElement.classList.add("motion");setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove("motion")},3000)</script>
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
 </head>
 <body class="{% if page.url == '/' %}is-home{% endif %}">
@@ -45,6 +46,7 @@
       </div>
     </div>
   </footer>
+  <script src="{{ '/assets/js/motion.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
   {% if page.scripts %}{% for s in page.scripts %}<script src="{{ s | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>{% endfor %}{% endif %}
 </body>
 </html>

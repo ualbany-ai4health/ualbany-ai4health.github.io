@@ -2,7 +2,8 @@
 layout: page
 title: Research
 kicker: Research
-heading: Six kinds of data, one standard of evidence.
+heading: Six kinds of data, one standard of <span class="gold">evidence.</span>
+brain: true
 permalink: /research/
 head_class: deep
 lead: >-
@@ -20,10 +21,29 @@ lead: >-
           <h2>{{ r.title }}</h2>
           <p>{{ r.text }}</p>
         </div>
-        <div class="theme-img"><img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy"></div>
+        <div class="theme-img scanned"><span class="scan"></span><img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy"></div>
       </article>
       {% endfor %}
     </div>
     <p class="credit" style="margin-top: 72px;">Illustrations generated with ChatGPT for the AI4Health Lab. They depict research themes, not study data.</p>
+  </div>
+</section>
+
+<section class="section deep method" id="method">
+  <div class="wrap">
+    <p class="kicker">How we work</p>
+    <h2 class="section-title focus">How we keep a model <span class="gold">honest.</span></h2>
+    <div class="steps">
+      <nav class="rail" aria-label="Validation steps">
+        <a href="#step-record" class="on">Record</a><a href="#step-split">Split</a><a href="#step-train">Train</a><a href="#step-test">Test</a>
+      </nav>
+      <div>
+        <div class="step" id="step-record" data-step="0"><span class="unit">Step 1 · Record</span><h3>Every sample keeps its patient's ID.</h3><p>A study has dozens of people and thousands of 30-second sleep epochs or MRI slices from each. No sample ever loses track of whose body it came from.</p></div>
+        <div class="step" id="step-split" data-step="1"><span class="unit">Step 2 · Split</span><h3>Split by person, before anything else.</h3><p>Whole patients go to the test group. If slices of one brain sat on both sides, a model could recognise the person instead of the disease.</p></div>
+        <div class="step" id="step-train" data-step="2"><span class="unit">Step 3 · Train</span><h3>Every choice is made inside training.</h3><p>Architecture, features and thresholds are tuned on training patients only, in nested folds. The test group stays sealed.</p></div>
+        <div class="step" id="step-test" data-step="3"><span class="unit">Step 4 · Test</span><h3>The score comes from strangers.</h3><p>The reported number is measured once, on patients the model has never seen. That is the number a clinic would get.</p></div>
+      </div>
+      <div class="stage"><canvas id="split" role="img" aria-label="Forty patients shown as dots, split into training and test groups"></canvas><div class="cap" id="split-cap">40 patients · each dot is one person</div></div>
+    </div>
   </div>
 </section>

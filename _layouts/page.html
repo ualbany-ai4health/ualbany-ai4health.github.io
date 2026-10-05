@@ -2,10 +2,18 @@
 layout: default
 ---
 <section class="page-head {{ page.head_class }}">
-  <div class="wrap">
-    {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
-    <h1>{{ page.heading | default: page.title }}</h1>
-    {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+  <div class="wrap{% if page.brain %} head-grid{% endif %}">
+    <div>
+      {% if page.kicker %}<p class="kicker">{{ page.kicker }}</p>{% endif %}
+      <h1 class="focus">{{ page.heading | default: page.title }}</h1>
+      {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+    </div>
+    {% if page.brain %}
+    <div>
+      <div class="brainbox"><canvas id="brain" role="img" aria-label="A brain drawn as points, turning slowly, with the hippocampus marked in gold"></canvas></div>
+      <p class="brain-cap">HIPPOCAMPUS · WHERE OUR ALZHEIMER'S MODELS LOOK</p>
+    </div>
+    {% endif %}
   </div>
 </section>
 {{ content }}

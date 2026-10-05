@@ -144,6 +144,8 @@
     hx.fillStyle = C.gold; hx.beginPath(); hx.arc(L + span * (cur + 1) / night.length, yOf(night[cur]), 3.5, 0, 7); hx.fill();
 
     $("stage").textContent = night[cur];
+    const pill = $("pill-epoch");
+    if (pill) pill.textContent = `EPOCH ${cur + 1} / ${night.length} · ${night[cur]}`;
     $("conf").textContent = "p = " + (.78 + .2 * Math.abs(Math.sin(cur * 1.7))).toFixed(2);
     const secs = cur * 30 + 22 * 3600 + 40 * 60;
     $("clock").textContent = [Math.floor(secs / 3600) % 24, Math.floor(secs / 60) % 60, secs % 60].map(v => String(v).padStart(2, "0")).join(":");
