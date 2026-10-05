@@ -50,7 +50,22 @@
       if (el.classList.contains("stats")) resetCount(el);
     }
   }), { threshold: [0, .35] });
-  document.querySelectorAll(".focus, .scanned, .stats").forEach(el => io.observe(el));
+  const watched = document.querySelectorAll(".focus, .scanned, .stats");
+  watched.forEach(el => io.observe(el));
+  // safety net: whatever is already on screen when the page opens plays at once,
+  // even if the observer's first report arrives late
+  function playVisible() {
+    watched.forEach(el => {
+      const r = el.getBoundingClientRect();
+      const seen = Math.min(r.bottom, innerHeight) - Math.max(r.top, 0);
+      if (seen > Math.min(r.height, innerHeight) * .35 && !el.classList.contains("in")) {
+        el.classList.add("in");
+        if (el.classList.contains("stats")) countUp(el);
+      }
+    });
+  }
+  requestAnimationFrame(() => requestAnimationFrame(playVisible));
+  addEventListener("load", playVisible);
 
   /* ---------- canvas helper ---------- */
   function fit(cv, g) {
