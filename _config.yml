@@ -10,6 +10,7 @@ lang: en
 nav:
   - { title: Home, url: / }
   - { title: Research, url: /research/ }
+  - { title: Projects, url: /projects/ }
   - { title: People, url: /people/ }
   - { title: Publications, url: /publications/ }
   - { title: Contact, url: /contact/ }

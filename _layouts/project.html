@@ -1,0 +1,50 @@
+---
+layout: default
+---
+{% assign p = site.data.projects | where: "slug", page.slug | first %}
+<section class="page-head project-head">
+  <div class="wrap">
+    <a class="back" href="{{ '/projects/' | relative_url }}">← All projects</a>
+    <p class="kicker"><span class="status">{{ p.status }}</span></p>
+    <h1 class="focus">{{ p.title }}</h1>
+    {% if p.subtitle %}<p class="lead">{{ p.subtitle }}</p>{% endif %}
+    <p class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</p>
+  </div>
+</section>
+
+<section class="section deep project-body">
+  <div class="wrap project-grid">
+    <div class="project-text">
+      <p class="project-summary">{{ p.summary }}</p>
+      <div class="io">
+        <div>
+          <h2>Data in</h2>
+          <ul>{% for i in p.inputs %}<li>{{ i }}</li>{% endfor %}</ul>
+        </div>
+        <div>
+          <h2>What it delivers</h2>
+          <ul>{% for o in p.outputs %}<li>{{ o }}</li>{% endfor %}</ul>
+        </div>
+      </div>
+    </div>
+    {% if p.art %}<div class="project-art scanned"><span class="scan"></span><img src="{{ '/assets/img/projects/' | append: p.art | relative_url }}" alt=""></div>{% endif %}
+  </div>
+</section>
+
+<section class="section light">
+  <div class="wrap">
+    <p class="kicker">Overview</p>
+    <h2 class="section-title focus">The full <span class="teal">picture.</span></h2>
+    <p class="intro">The project's overview figure. Open it at full size to read every block.</p>
+    <a class="diagram" href="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" alt="Overview figure of {{ p.title }}" loading="lazy">
+      <span>Open full size ↗</span>
+    </a>
+    {% if p.image %}
+    <a class="diagram" href="{{ '/assets/img/projects/' | append: p.image | relative_url }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/projects/' | append: p.image | relative_url }}" alt="Illustration of {{ p.title }}" loading="lazy">
+      <span>Open full size ↗</span>
+    </a>
+    {% endif %}
+  </div>
+</section>

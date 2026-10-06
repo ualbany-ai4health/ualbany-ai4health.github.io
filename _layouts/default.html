@@ -4,19 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
-  <meta name="theme-color" content="#0f0b14">
+  <meta name="theme-color" content="#05080f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <script>document.documentElement.classList.add("motion");setTimeout(function(){if(!window.__motion)document.documentElement.classList.remove("motion")},3000)</script>
-  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/img/logo/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/logo/apple-touch-icon.png' | relative_url }}">
 </head>
 <body class="{% if page.url == '/' %}is-home{% endif %}">
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="mark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
-        <b>AI<i>4</i>Health</b><span>UALBANY · SUNY</span>
+        <img class="mark-icon" src="{{ '/assets/img/logo/icon-96.png' | relative_url }}" alt="" width="40" height="40">
+        <span class="mark-text"><b>AI<i>4</i>Health Lab</b><span>UALBANY · SUNY</span></span>
       </a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
       <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
@@ -34,6 +36,9 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img src="{{ '/assets/img/logo/logo-900.webp' | relative_url }}" alt="AI4Health Lab · Intelligence for a healthier tomorrow" width="220" loading="lazy">
+      </div>
       <div>
         <b>{{ site.title }}</b><br>
         {{ site.contact.department }}, CEHC<br>

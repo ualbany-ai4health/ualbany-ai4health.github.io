@@ -6,14 +6,14 @@
   const root = document.documentElement;
   root.classList.add("motion");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const C = { trace: "#cbbbe8", muted: "#a397b3", gold: "#eeb211", dim: "#6d6280" };
+  const C = { trace: "#a9c8f0", muted: "#8fa3bd", teal: "#10d6c2", dim: "#4f6480" };
 
   /* ---------- words come into focus ---------- */
   document.querySelectorAll(".focus").forEach(h => {
     const out = [];
     h.childNodes.forEach(n => {
       if (n.nodeType === 3) n.textContent.split(/(\s+)/).forEach(t => out.push(t.trim() ? `<span class="w">${t}</span>` : t));
-      else if (n.nodeType === 1) out.push(`<span class="w${n.classList.contains("gold") ? " gold" : ""}">${n.textContent}</span>`);
+      else if (n.nodeType === 1) out.push(`<span class="w${n.classList.contains("teal") ? " teal" : ""}">${n.textContent}</span>`);
     });
     h.innerHTML = out.join("");
     h.querySelectorAll(".w").forEach((w, i) => (w.style.transitionDelay = i * 70 + "ms"));
@@ -109,7 +109,7 @@
       const [w, h] = fit(split, g);
       g.clearRect(0, 0, w, h);
       if (step >= 1) {
-        g.strokeStyle = "rgba(238,178,17,.5)"; g.setLineDash([4, 6]);
+        g.strokeStyle = "rgba(16,214,194,.5)"; g.setLineDash([4, 6]);
         g.beginPath(); g.moveTo(w * .7, h * .1); g.lineTo(w * .7, h * .86); g.stroke(); g.setLineDash([]);
         g.font = "400 11px 'IBM Plex Mono', monospace"; g.fillStyle = C.muted;
         g.fillText("TRAINING", w * .12, h * .1); g.fillText("TEST", w * .78, h * .1);
@@ -119,8 +119,8 @@
         p.cx += (tx - p.cx) * (reduce ? 1 : .06); p.cy += (ty - p.cy) * (reduce ? 1 : .06);
         const x = p.cx * w, y = p.cy * h;
         let col = C.trace, a = .9;
-        if (step >= 1 && p.test) { col = step === 3 ? C.gold : C.dim; a = step === 3 ? 1 : .8; }
-        if (step === 2 && !p.test) { const on = Math.floor(t / 900) % 4 === p.fold; col = on ? C.gold : C.trace; a = on ? 1 : .55; }
+        if (step >= 1 && p.test) { col = step === 3 ? C.teal : C.dim; a = step === 3 ? 1 : .8; }
+        if (step === 2 && !p.test) { const on = Math.floor(t / 900) % 4 === p.fold; col = on ? C.teal : C.trace; a = on ? 1 : .55; }
         if (step === 3 && !p.test) a = .35;
         g.globalAlpha = a; g.fillStyle = col; g.fillRect(x - 3, y - 3, 6, 6);
         if (step === 3 && p.test) { g.globalAlpha = .25 + .2 * Math.sin(t / 300 + p.ph); g.strokeStyle = col; g.strokeRect(x - 9, y - 9, 18, 18); }
@@ -165,7 +165,7 @@
       for (const p of proj) {
         const depth = Math.max(0, Math.min(1, (p.z + 1.1) / 2.2)), sz = p.hot ? 3 : 1.2 + 1.5 * depth;
         g.globalAlpha = p.hot ? .95 : .18 + .6 * depth;
-        g.fillStyle = p.hot ? C.gold : C.trace;
+        g.fillStyle = p.hot ? C.teal : C.trace;
         g.fillRect(p.x - sz / 2, p.y - sz / 2, sz, sz);
       }
       g.globalAlpha = 1;

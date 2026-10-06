@@ -1,0 +1,132 @@
+# Lab projects. status is shown as a tag on the card and the project page.
+# diagram: file in assets/img/projects/ (the full overview figure)
+# inputs / outputs: short lists drawn from the project's overview figure
+- slug: depression
+  art: depression-art.webp
+  title: "Multimodal Depression Intelligence"
+  status: "In progress"
+  tags: ["EEG", "Wearables", "Speech", "Language", "Knowledge graph"]
+  diagram: depression.webp
+  short: >-
+    Detecting depression and predicting its course by combining brain signals,
+    wearables, speech, text and clinical records.
+  summary: >-
+    Depression shows up in many places at once: in EEG rhythms and sleep, in
+    heart-rate variability and daily activity, in the voice and in the words a
+    person chooses. This project brings these streams together in one model
+    that reasons over a biomedical knowledge graph, so that detection, relapse
+    warnings and treatment suggestions rest on more than a single signal.
+  inputs:
+    - "EEG and neurophysiological recordings from wearables"
+    - "Heart-rate variability, activity, sleep and skin conductance"
+    - "Clinical records, multi-omics and psychometric scales"
+    - "Speech, prosody and written language, with consent"
+  outputs:
+    - "Depression detection and severity classification"
+    - "Risk stratification and early warning of onset or relapse"
+    - "Symptom trajectory modelling over time"
+    - "Treatment response prediction and what-if analysis"
+
+- slug: cardiovascular
+  art: cardiovascular-art.webp
+  title: "Personalized Medicine for Cardiovascular Disease"
+  status: "In progress"
+  tags: ["ECG", "Imaging", "Multi-omics", "Knowledge graph", "LLM"]
+  diagram: cvd.webp
+  short: >-
+    One patient's ECG, imaging, genomics and lifestyle combined into a
+    personal risk profile and treatment plan.
+  summary: >-
+    Cardiovascular care still relies largely on population averages. We are
+    building a framework that harmonises clinical records, imaging, genomics,
+    physiological signals and lifestyle data around a cardiovascular knowledge
+    graph, and uses graph neural networks, causal models and language models to
+    predict risk, disease progression and response to treatment for the
+    individual patient.
+  inputs:
+    - "Clinical records: history, notes, labs, medications"
+    - "Echocardiography, MRI, CT, ultrasound and angiography"
+    - "ECG, PPG, blood pressure and heart-rate variability"
+    - "Genomics, proteomics and lifestyle factors"
+  outputs:
+    - "Cardiovascular risk prediction and early warning"
+    - "Disease subtyping and progression modelling"
+    - "Personalised treatment recommendations"
+    - "Population-level identification of high-risk groups"
+
+- slug: emotion
+  art: emotion-art.webp
+  title: "Multimodal Emotion Recognition"
+  status: "In progress"
+  tags: ["EEG", "EMG", "ECG", "Face", "Speech"]
+  diagram: emotion.webp
+  short: >-
+    Recognising emotional state, its intensity and how it changes, from face,
+    body signals, voice and text together.
+  summary: >-
+    A single channel rarely tells the whole story of how someone feels. This
+    project aligns facial expression, EEG, EMG, ECG, skin conductance, speech
+    and language in time, and builds an emotion recognition engine that reports
+    state, intensity and trajectory in context, as a basis for mental-health
+    monitoring and emotion-aware human–AI interaction.
+  inputs:
+    - "Facial expression, gesture and gaze"
+    - "EEG, EMG, ECG and skin conductance"
+    - "Speech signal and prosody"
+    - "Written language, activity and situational context"
+  outputs:
+    - "Emotion classification with intensity"
+    - "Temporal dynamics and early risk detection"
+    - "Personalised insights and recommendations"
+    - "Support for mental-health monitoring and clinicians"
+
+- slug: cardio-twin
+  art: cardio-twin-art.webp
+  title: "Cardio Twin"
+  subtitle: "An edge-based digital twin for real-time cardiovascular monitoring"
+  status: "In progress"
+  tags: ["Digital twin", "Edge computing", "ECG", "Privacy"]
+  diagram: cardio-twin.webp
+  short: >-
+    A patient-specific virtual heart that runs close to the patient, updated
+    in real time from wearables and used to test treatments before they are given.
+  summary: >-
+    A digital twin is a computer model of one person's heart that is kept up
+    to date with their own data. Cardio Twin processes physiological signals at
+    the edge, on or near the patient's devices, so that monitoring is fast and
+    data stays private, and uses the twin to simulate disease progression,
+    virtual stress tests and treatment responses before they reach the patient.
+  inputs:
+    - "Real-time ECG, PPG, blood pressure and heart-rate variability"
+    - "Echocardiography, MRI and CT"
+    - "Clinical records and genomics"
+    - "Activity, sleep, stress and environment"
+  outputs:
+    - "Continuous risk monitoring with anomaly alerts"
+    - "Disease progression and treatment response simulation"
+    - "Patient-specific risk profiles"
+    - "Remote care and patient engagement"
+
+- slug: bci-game
+  art: bci-game-art.webp
+  title: "Brain–Computer Interface for Game Control"
+  status: "In progress"
+  tags: ["EEG", "BCI", "Real-time", "Neurofeedback"]
+  diagram: bci.webp
+  image: bci-scene.webp
+  short: >-
+    Moving, aiming, jumping and shooting in a game using only brain signals
+    from a non-invasive EEG headset.
+  summary: >-
+    A brain–computer interface turns brain activity into commands. Here a
+    player wears a non-invasive EEG headset; the signals are cleaned, turned
+    into features and classified into intentions such as move, aim, jump or
+    rest, and the game responds in real time. Visual and auditory feedback
+    close the loop so the system adapts to each player, with potential uses in
+    neurorehabilitation and training.
+  inputs:
+    - "Multichannel EEG from a non-invasive headset (Fz, C3, Cz, C4, Pz)"
+  outputs:
+    - "Real-time decoding of intention, attention and motor imagery"
+    - "Game commands: move, aim, jump, shoot, rest"
+    - "Neurofeedback and per-player adaptation"

@@ -1,0 +1,27 @@
+---
+layout: page
+title: Projects
+kicker: Projects
+heading: What we are <span class="teal">building.</span>
+permalink: /projects/
+lead: >-
+  Five lines of work, each combining several kinds of health data into one
+  model. All are in progress.
+---
+<section class="section deep">
+  <div class="wrap">
+    <div class="projects">
+      {% for p in site.data.projects %}
+      <a class="project-card scanned" href="{{ '/projects/' | append: p.slug | append: '/' | relative_url }}">
+        <span class="pc-img">{% if p.art %}<img src="{{ '/assets/img/projects/' | append: p.art | relative_url }}" alt="" loading="lazy">{% else %}<img class="is-diagram" src="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" alt="" loading="lazy">{% endif %}<span class="scan"></span></span>
+        <span class="pc-body">
+          <span class="status">{{ p.status }}</span>
+          <h2>{{ p.title }}</h2>
+          <p>{{ p.short }}</p>
+          <span class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}</span>
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

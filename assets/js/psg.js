@@ -1,13 +1,13 @@
 /* Live polysomnogram for the home hero.
    Simulated signals: five channels at 100 Hz, stage-specific rhythms and events,
-   and a hypnogram of one night (960 epochs of 30 s) that the "model" reads in gold. */
+   and a hypnogram of one night (960 epochs of 30 s) that the "model" reads in teal. */
 (function () {
   const cv = document.getElementById("psg");
   const hc = document.getElementById("hypc");
   if (!cv || !hc) return;
   const cx = cv.getContext("2d"), hx = hc.getContext("2d");
   const $ = id => document.getElementById(id);
-  const C = { trace: "#cbbbe8", grid: "rgba(203,187,232,.07)", muted: "#a397b3", gold: "#eeb211" };
+  const C = { trace: "#a9c8f0", grid: "rgba(169,200,240,.07)", muted: "#8fa3bd", teal: "#10d6c2" };
 
   // deterministic noise
   let seed = 7;
@@ -104,9 +104,9 @@
     for (const e of events) {
       if (e.t1 < tLeft) continue;
       const ax = x0 + span * (e.t0 - tLeft) / WIN, bx = x0 + span * (e.t1 - tLeft) / WIN, y = top + lane * .5;
-      cx.fillStyle = "rgba(238,178,17,.12)"; cx.fillRect(ax, y - lane * .48, bx - ax, lane * .96);
-      cx.strokeStyle = C.gold; cx.strokeRect(ax + .5, y - lane * .48 + .5, bx - ax - 1, lane * .96 - 1);
-      cx.fillStyle = C.gold; cx.fillText(e.label, ax + 6, y - lane * .48 - 6);
+      cx.fillStyle = "rgba(16,214,194,.12)"; cx.fillRect(ax, y - lane * .48, bx - ax, lane * .96);
+      cx.strokeStyle = C.teal; cx.strokeRect(ax + .5, y - lane * .48 + .5, bx - ax - 1, lane * .96 - 1);
+      cx.fillStyle = C.teal; cx.fillText(e.label, ax + 6, y - lane * .48 - 6);
     }
     while (events.length && events[0].t1 < tLeft) events.shift();
     CH.forEach((ch, c) => {
@@ -120,7 +120,7 @@
       }
       cx.stroke(); cx.globalAlpha = 1;
     });
-    cx.strokeStyle = "rgba(238,178,17,.55)"; cx.beginPath(); cx.moveTo(x0 + span, top - 20); cx.lineTo(x0 + span, bottom); cx.stroke();
+    cx.strokeStyle = "rgba(16,214,194,.55)"; cx.beginPath(); cx.moveTo(x0 + span, top - 20); cx.lineTo(x0 + span, bottom); cx.stroke();
     drawHyp();
   }
 
@@ -139,9 +139,9 @@
       }
     };
     hx.lineWidth = 1.4;
-    path(night.length - 1); hx.strokeStyle = "rgba(203,187,232,.35)"; hx.stroke();
-    path(cur); hx.strokeStyle = C.gold; hx.stroke();
-    hx.fillStyle = C.gold; hx.beginPath(); hx.arc(L + span * (cur + 1) / night.length, yOf(night[cur]), 3.5, 0, 7); hx.fill();
+    path(night.length - 1); hx.strokeStyle = "rgba(169,200,240,.35)"; hx.stroke();
+    path(cur); hx.strokeStyle = C.teal; hx.stroke();
+    hx.fillStyle = C.teal; hx.beginPath(); hx.arc(L + span * (cur + 1) / night.length, yOf(night[cur]), 3.5, 0, 7); hx.fill();
 
     $("stage").textContent = night[cur];
     const pill = $("pill-epoch");

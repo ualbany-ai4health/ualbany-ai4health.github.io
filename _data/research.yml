@@ -1,9 +1,9 @@
 # Research themes shown on the home and research pages.
-# image: file in assets/img/research/ · unit: the data and scale, shown in gold
+# image: file in assets/img/research/ · unit: the data and scale, shown in teal
 - key: sleep
   title: "Sleep and biosignals"
   unit: "EEG · EOG · EMG · 30 s epochs"
-  image: sleep.jpg
+  image: sleep.webp
   short: "Sleep staging from overnight recordings, including newborns in intensive care."
   text: >-
     Machine learning on physiological time series: sleep staging from
@@ -12,7 +12,7 @@
 - key: imaging
   title: "Brain imaging"
   unit: "MRI · CT · 1 mm voxels"
-  image: imaging.jpg
+  image: imaging.webp
   short: "Alzheimer's, stroke and haemorrhage from scans, validated per patient, not per slice."
   text: >-
     Deep learning models for brain MRI and CT, with a focus on Alzheimer's
@@ -22,7 +22,7 @@
 - key: wearables
   title: "Wearables"
   unit: "ECG · skin conductance"
-  image: wearables.jpg
+  image: wearables.webp
   short: "Stress and emotion from body-worn sensors, and how the hardware changes the answer."
   text: >-
     Recognising emotional and stress states from wearable sensors such as ECG
@@ -31,7 +31,7 @@
 - key: neuro
   title: "Neurodegeneration"
   unit: "Alzheimer's · dementia"
-  image: neuro.jpg
+  image: neuro.webp
   short: "Earlier detection and staging from imaging and physiology."
   text: >-
     Detection and staging of Alzheimer's disease from imaging and physiological
@@ -39,7 +39,7 @@
 - key: llm
   title: "Language models for health"
   unit: "LLM · multimodal"
-  image: llm.jpg
+  image: llm.webp
   short: "Models that reason over signals, records and scans together."
   text: >-
     Large language models and multimodal frameworks that combine structured
@@ -47,7 +47,7 @@
 - key: population
   title: "Population health"
   unit: "Survey · registry"
-  image: population.jpg
+  image: population.webp
   short: "Risk factors of substance use from population-scale data."
   text: >-
     Machine learning on population-scale survey and registry data, for example
