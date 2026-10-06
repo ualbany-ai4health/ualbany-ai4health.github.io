@@ -41,7 +41,7 @@ scripts:
     <div class="tiles">
       {% for r in site.data.research %}
       <a class="tile scanned" href="{{ '/research/' | relative_url }}#{{ r.key }}">
-        <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" loading="lazy">
+        <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" decoding="async">
         <span class="scan"></span>
         <div class="tile-body">
           <span class="unit">{{ r.unit }}</span>
