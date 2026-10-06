@@ -87,7 +87,7 @@
     cv.width = W * d; cv.height = H * d; cx.setTransform(d, 0, 0, d, 0, 0);
     hc.width = hc.clientWidth * d; hc.height = hc.clientHeight * d; hx.setTransform(d, 0, 0, d, 0, 0);
   }
-  size(); addEventListener("resize", size);
+  size(); addEventListener("resize", () => { size(); draw(); });
 
   function draw() {
     const narrow = W < 760;
