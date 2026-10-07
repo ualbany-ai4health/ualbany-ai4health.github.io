@@ -44,6 +44,7 @@
         {{ site.contact.department }}, CEHC<br>
         {{ site.contact.address }}
       </div>
+      {% if page.url == '/' %}<p class="data-credit">Sleep recording: <em>Sleep-EDF Database Expanded</em>, record SC4001E0 and its hypnogram (Kemp et al., <em>IEEE Trans. Biomed. Eng.</em> 47(9):1185–1194, 2000), from <a href="https://physionet.org/content/sleep-edfx/1.0.0/">PhysioNet</a> (<a href="https://doi.org/10.13026/C2X676">doi:10.13026/C2X676</a>; Pollard et al., <em>Nature Health</em>, 2026, <a href="https://doi.org/10.1038/s44360-026-00096-z">doi:10.1038/s44360-026-00096-z</a>). Open data, Open Data Commons Attribution License 1.0. We show short excerpts of one night from a healthy volunteer; stages were scored by sleep technicians, and spindle boxes come from a simple 11–16 Hz band-pass filter.</p>{% endif %}
       <div class="footer-links">
         <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
         <a href="https://github.com/{{ site.contact.github }}">GitHub</a>

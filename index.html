@@ -6,23 +6,23 @@ scripts:
 ---
 <section class="hero">
   <div class="monitor">
-    <canvas id="psg" role="img" aria-label="Simulated overnight sleep recording with five channels; a model marks sleep spindles and reads the sleep stage"></canvas>
+    <canvas id="psg" role="img" aria-label="Replay of a real overnight sleep recording: two EEG channels, eye movements, muscle tone and breathing, with spindles marked and the stage scored by technicians"></canvas>
     <div class="fade"></div>
     <div class="hero-copy">
       <div class="wrap">
-        <div class="pill"><i></i>RECORDING · <span id="pill-epoch">EPOCH 270 / 960 · N2</span></div>
+        <div class="pill"><i></i><span id="pill-epoch">REPLAY · REAL NIGHT · SLEEP-EDF</span></div>
         <h1>Teaching machines to read the body.</h1>
         <p class="lede">We build models that turn EEG, ECG, muscle and imaging data into clinical answers, and test them on patients they have never seen.</p>
       </div>
     </div>
-    <div class="sim-note">SIMULATED RECORDING · ILLUSTRATION</div>
+    <div class="sim-note">LOADING THE RECORDING…</div>
   </div>
   <div class="readout" aria-hidden="true">
     <div class="wrap">
       <div>
-        <div class="ro-label">Model reads</div>
+        <div class="ro-label">Stage scored by technicians</div>
         <div class="ro-stage" id="stage">N2</div>
-        <div class="ro-conf" id="conf">p = 0.91</div>
+        <div class="ro-conf" id="conf">expert hypnogram</div>
       </div>
       <div class="hyp"><canvas id="hypc"></canvas></div>
       <div class="ro-meta">

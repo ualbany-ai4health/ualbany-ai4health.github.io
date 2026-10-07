@@ -301,6 +301,8 @@ a.pub:hover .pub-title { color: var(--blue-2); }
 .site-footer { background: var(--ink); color: var(--muted); padding-block: 48px; font-size: 14px; border-top: 1px solid var(--line-dark); }
 .site-footer b { color: var(--text); font-family: var(--display); }
 .footer-inner { display: flex; flex-wrap: wrap; gap: 32px 48px; justify-content: space-between; align-items: center; }
+.data-credit { flex: 1 1 100%; order: 3; margin: 8px 0 0; padding-top: 20px; border-top: 1px solid var(--line-dark); font-size: 12.5px; line-height: 1.6; max-width: 90ch; color: var(--muted); }
+.data-credit a { color: var(--text); }
 .footer-brand img { display: block; width: 220px; max-width: 100%; height: auto; }
 .footer-links { display: flex; flex-direction: column; gap: 4px; }
 .footer-links a { text-decoration: none; }
