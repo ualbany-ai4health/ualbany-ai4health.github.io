@@ -2,6 +2,7 @@
 # Rendered as a four-stage flow on the research page.
 stages:
   - title: "Multimodal health data"
+    icon: data
     items:
       - { name: "Clinical records", note: "EHR, clinical notes" }
       - { name: "Genomics & multi-omics", note: "DNA, RNA, proteomics, metabolomics" }
@@ -11,6 +12,7 @@ stages:
       - { name: "Patient-reported data", note: "PROMs, PREMs, behaviour" }
       - { name: "Environment & lifestyle", note: "exposome, social factors" }
   - title: "Knowledge & models"
+    icon: graph
     items:
       - { name: "Biomedical knowledge graph", note: "diseases, genes, biomarkers, pathways, treatments, guidelines" }
       - { name: "Graph neural networks", note: "risk, stratification, progression, biomarkers" }
@@ -18,10 +20,12 @@ stages:
       - { name: "Large language & multimodal models", note: "clinical reasoning, generative and conversational AI" }
       - { name: "Cognitive digital twin & NeuroTwin", note: "patient-specific simulation, virtual trials" }
   - title: "Agentic AI"
+    icon: agents
     core: { title: "Agentic AI", sub: "Reasoning · learning · planning · action" }
     chips_title: "Multi-agent framework"
     chips: ["Data agent", "Risk agent", "Diagnosis agent", "Treatment agent", "Monitoring agent", "Patient engagement agent", "Research & discovery agent", "System coordination agent"]
   - title: "Applications & impact"
+    icon: community
     items:
       - { name: "Oncology", note: "TNBC, EOBC" }
       - { name: "Cardiometabolic", note: "CVD, T2DM" }

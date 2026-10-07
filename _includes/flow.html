@@ -6,7 +6,8 @@
 {% assign f = include.f %}
 <div class="eco" aria-label="{{ include.label }}">
   {% for st in f.stages %}
-  <div class="eco-col{% if st.core %} eco-core{% endif %}">
+  <div class="eco-col{% if st.core %} eco-core{% endif %}" data-stage="{{ forloop.index0 }}">
+    {% if st.icon %}<span class="eco-icon"><img src="{{ '/assets/img/icons/' | append: st.icon | append: '.webp' | relative_url }}" alt="" width="120" height="120" decoding="async"></span>{% endif %}
     <p class="eco-step"><span>{{ forloop.index | prepend: '0' }}</span>{{ st.title }}</p>
     {% if st.core %}<div class="eco-hub"><b>{{ st.core.title }}</b><span>{{ st.core.sub }}</span></div>{% endif %}
     {% if st.items %}

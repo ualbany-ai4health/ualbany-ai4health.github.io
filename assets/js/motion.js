@@ -203,6 +203,18 @@
     whileVisible(split, draw);
   }
 
+  /* ---------- flows: the signal moves through the stages, lighting each in turn ---------- */
+  document.querySelectorAll(".eco").forEach(flow => {
+    const cols = [...flow.querySelectorAll(".eco-col")];
+    if (reduce) { cols.forEach(c => c.classList.add("lit")); return; }
+    let i = 0, timer = null;
+    const step = () => { cols.forEach((c, k) => c.classList.toggle("lit", k === i)); i = (i + 1) % cols.length; };
+    new IntersectionObserver(e => {
+      if (e[0].isIntersecting && !timer) { i = 0; step(); timer = setInterval(step, 1500); }
+      else if (!e[0].isIntersecting && timer) { clearInterval(timer); timer = null; cols.forEach(c => c.classList.remove("lit")); }
+    }, { threshold: .25 }).observe(flow);
+  });
+
   /* ---------- point-cloud brain ---------- */
   const brain = document.getElementById("brain");
   if (brain) {
