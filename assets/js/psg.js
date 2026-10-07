@@ -45,7 +45,9 @@
     const STAGES = D.names, hyp = D.hyp, NE = hyp.length;     // rows top to bottom: W, REM, N1, N2, N3
     if (note) note.textContent = "REAL RECORDING · SLEEP-EDF SC4001E0 · PHYSIONET";
 
-    let W, H, k = 0, t = reduce ? 30 : PRE, last = performance.now(), fade = 1;
+    // ?psg-excerpt=N pins the replay to excerpt N, paused (used to check each stage's final picture)
+    const pin = new URLSearchParams(location.search).get("psg-excerpt");
+    let W, H, k = pin ? Math.max(0, Math.min(ex.length - 1, +pin)) : 0, t = reduce || pin ? 30 : PRE, last = performance.now(), fade = 1;
     function size() {
       const d = Math.min(2, window.devicePixelRatio || 1);
       W = cv.clientWidth; H = cv.clientHeight;
@@ -145,6 +147,6 @@
     }
     draw();
     if (document.fonts) document.fonts.ready.then(draw);
-    if (!reduce) requestAnimationFrame(loop);
+    if (!reduce && !pin) requestAnimationFrame(loop);
   }
 })();
