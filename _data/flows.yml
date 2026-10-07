@@ -2,6 +2,7 @@
 # Same schema as _data/ecosystem.yml (see _includes/flow.html).
 
 depression:
+  intro: "From signals of body, brain and speech to support that reaches patients and clinicians."
   stages:
     - title: "Multimodal data"
       items:
@@ -39,6 +40,7 @@ depression:
   outcomes: ["Early, accurate detection", "Personalised care", "Improved outcomes", "Better mental health"]
 
 cardiovascular:
+  intro: "From one patient's heart data to decisions for that patient, and to prevention for whole populations."
   stages:
     - title: "Cardiovascular data"
       items:
@@ -70,6 +72,7 @@ cardiovascular:
   outcomes: ["Earlier detection", "Personalised care", "Improved outcomes", "Healthier communities"]
 
 emotion:
+  intro: "From face, body signals, voice and words to an emotional state a clinician or a system can act on."
   stages:
     - title: "Modalities"
       items:
@@ -103,6 +106,7 @@ emotion:
   outcomes: ["Early detection", "Personalised care", "Improved outcomes", "Healthier lives"]
 
 cardio-twin:
+  intro: "From wearable signals processed at the edge to a living model of one patient's heart."
   stages:
     - title: "Cardiovascular data"
       items:
@@ -137,6 +141,7 @@ cardio-twin:
   outcomes: ["Earlier detection", "Personalised care", "Improved outcomes", "Healthier hearts"]
 
 bci-game:
+  intro: "From brain signals to game actions, and back to the player as feedback."
   stages:
     - title: "Brain signal acquisition"
       items:
@@ -158,4 +163,6 @@ bci-game:
   loop:
     title: "Closed loop: feedback & adaptation"
     steps: ["Performance feedback", "Adaptive learning per player", "Neurofeedback", "Back to the player"]
-  outcomes: ["Hands-free control", "Personalised & adaptive", "Non-invasive & safe", "Neurorehabilitation & training"]
+  band:
+    title: "Key advantages"
+    chips: ["Real-time, hands-free control", "Personalised & adaptive", "Non-invasive & safe", "Potential for neurorehabilitation & training"]
