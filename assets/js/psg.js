@@ -30,8 +30,8 @@
     const p95 = a => { const s = a.map(Math.abs).sort((x, y) => x - y); return s[Math.floor(s.length * .95)] || 1; };
     const respMed = ex.map(e => { const s = [...e.resp].sort((x, y) => x - y); return s[22]; });
     const SC = {
-      eeg: 100 / D.eeg_step_uv,                           // 100 uV fills a lane's half-height
-      eog: 200 / D.eog_step_uv,
+      eeg: 55 / D.eeg_step_uv,                            // 55 uV fills a lane's half-height
+      eog: 120 / D.eog_step_uv,
       emg: Math.max(1e-6, p95(ex.flatMap(e => e.emg))),
       resp: p95(ex.flatMap((e, i) => e.resp.map(v => v - respMed[i]))),
     };
@@ -59,8 +59,10 @@
     // value of a lane at excerpt time u seconds, in display units (about -1..1)
     function val(e, ln, u, i) {
       if (ln.rate === 100) { const j = Math.max(0, Math.min(e[ln.key].length - 1, Math.round(u * FS))); return e[ln.key][j] / ln.k; }
+      // 1 Hz channels: smooth Catmull-Rom curve through the recorded points
       const a = e[ln.key], j = Math.max(0, Math.min(a.length - 2, Math.floor(u))), f = Math.max(0, Math.min(1, u - j));
-      let v = a[j] * (1 - f) + a[j + 1] * f;
+      const p0 = a[Math.max(0, j - 1)], p1 = a[j], p2 = a[j + 1], p3 = a[Math.min(a.length - 1, j + 2)];
+      let v = .5 * ((2 * p1) + (-p0 + p2) * f + (2 * p0 - 5 * p1 + 4 * p2 - p3) * f * f + (-p0 + 3 * p1 - 3 * p2 + p3) * f * f * f);
       if (ln.med) v -= respMed[i];
       return ln.base ? (v / ln.k) * 1.6 - .8 : v / ln.k;
     }
