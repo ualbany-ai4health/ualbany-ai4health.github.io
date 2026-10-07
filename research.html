@@ -11,16 +11,43 @@ lead: >-
   into validation as into modelling, so that results carry over to patients a
   model has never seen.
 ---
-<section class="section light big-picture">
+<section class="section deep big-picture" id="ecosystem">
   <div class="wrap">
     <p class="kicker">The big picture</p>
     <h2 class="section-title focus">One ecosystem, from data to <span class="teal">care.</span></h2>
-    <p class="intro">How the lab's work fits together: multimodal health data feeds knowledge graphs, graph neural networks, causal models and language models, coordinated by agents and held to trustworthy-AI standards.</p>
-    <a class="diagram" href="{{ '/assets/img/projects/ecosystem.webp' | relative_url }}" target="_blank" rel="noopener">
-      <img src="{{ '/assets/img/projects/ecosystem.webp' | relative_url }}" alt="AI4Health ecosystem: multimodal data, AI methods, applications and trustworthy AI" decoding="async">
-      <span>Open full size ↗</span>
-    </a>
-    <a class="more" href="{{ '/projects/' | relative_url }}">See the projects →</a>
+    <p class="intro">How the lab's work fits together. Health data of every kind feeds knowledge graphs and models; agents put them to work; the result reaches clinics and patients, under the same rules of trustworthy AI throughout.</p>
+
+    <div class="eco" aria-label="AI4Health ecosystem, from data to applications">
+      {% for st in site.data.ecosystem.stages %}
+      <div class="eco-col{% if st.core %} eco-core{% endif %}">
+        <p class="eco-step"><span>{{ forloop.index | prepend: '0' }}</span>{{ st.title }}</p>
+        {% if st.core %}
+        <div class="eco-hub"><b>Agentic AI</b><span>{{ st.core }}</span></div>
+        <p class="eco-sub">Multi-agent framework</p>
+        <ul class="eco-agents">{% for it in st.items %}<li>{{ it.name }}</li>{% endfor %}</ul>
+        {% else %}
+        <ul class="eco-list">
+          {% for it in st.items %}<li><b>{{ it.name }}</b>{% if it.note %}<span>{{ it.note }}</span>{% endif %}</li>{% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      {% unless forloop.last %}<div class="eco-link" aria-hidden="true"><i></i></div>{% endunless %}
+      {% endfor %}
+    </div>
+
+    <div class="eco-trust">
+      <p class="eco-step"><span>✓</span>Trustworthy AI &amp; responsible innovation, at every stage</p>
+      <ul>{% for t in site.data.ecosystem.trust %}<li>{{ t }}</li>{% endfor %}</ul>
+    </div>
+
+    <ol class="eco-out">
+      {% for o in site.data.ecosystem.outcomes %}<li>{{ o }}</li>{% endfor %}
+    </ol>
+
+    <p class="eco-foot">
+      <a class="more" href="{{ '/projects/' | relative_url }}">See the projects →</a>
+      <a class="eco-orig" href="{{ '/assets/img/projects/ecosystem.webp' | relative_url }}" target="_blank" rel="noopener">Original ecosystem figure ↗</a>
+    </p>
   </div>
 </section>
 

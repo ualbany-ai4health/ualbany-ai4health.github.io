@@ -1,0 +1,55 @@
+# The AI4HEALTH ecosystem, taken from the lab's overview figure (Fig2).
+# Rendered as a four-stage flow on the research page.
+stages:
+  - title: "Multimodal health data"
+    items:
+      - { name: "Clinical records", note: "EHR, clinical notes" }
+      - { name: "Genomics & multi-omics", note: "DNA, RNA, proteomics, metabolomics" }
+      - { name: "Medical imaging", note: "MRI, CT, US, X-ray, histopathology, OCT" }
+      - { name: "Physiological signals", note: "EEG, ECG, EMG, PPG" }
+      - { name: "Wearables & IoMT", note: "activity, vitals, sensors" }
+      - { name: "Patient-reported data", note: "PROMs, PREMs, behaviour" }
+      - { name: "Environment & lifestyle", note: "exposome, social factors" }
+  - title: "Knowledge & models"
+    items:
+      - { name: "Biomedical knowledge graph", note: "diseases, genes, biomarkers, pathways, treatments, guidelines" }
+      - { name: "Graph neural networks", note: "risk, stratification, progression, biomarkers" }
+      - { name: "Neuro-symbolic & causal AI", note: "knowledge-guided reasoning, what-if, explainability" }
+      - { name: "Large language & multimodal models", note: "clinical reasoning, generative and conversational AI" }
+      - { name: "Cognitive digital twin & NeuroTwin", note: "patient-specific simulation, virtual trials" }
+  - title: "Agentic AI"
+    core: "Reasoning · learning · planning · action"
+    items:
+      - { name: "Data agent" }
+      - { name: "Risk agent" }
+      - { name: "Diagnosis agent" }
+      - { name: "Treatment agent" }
+      - { name: "Monitoring agent" }
+      - { name: "Patient engagement agent" }
+      - { name: "Research & discovery agent" }
+      - { name: "System coordination agent" }
+  - title: "Applications & impact"
+    items:
+      - { name: "Oncology", note: "TNBC, EOBC" }
+      - { name: "Cardiometabolic", note: "CVD, T2DM" }
+      - { name: "Neuromuscular", note: "EMG, neuromuscular disorders" }
+      - { name: "Mental health", note: "anxiety, depression, SUD" }
+      - { name: "Aging & cognitive health", note: "Alzheimer's, sleep, frailty" }
+      - { name: "Precision & preventive care", note: "risk prediction, early intervention" }
+      - { name: "Healthcare cybersecurity", note: "IoMT, critical infrastructure" }
+      - { name: "Global & equitable health", note: "underserved populations" }
+
+trust:
+  - "Privacy & security"
+  - "Fairness & bias mitigation"
+  - "Explainability"
+  - "Robustness & reliability"
+  - "Human in the loop"
+  - "Federated learning & data sovereignty"
+  - "Regulatory compliance & ethics"
+
+outcomes:
+  - "Actionable clinical intelligence"
+  - "Personalised care"
+  - "Improved outcomes"
+  - "Healthier communities"
