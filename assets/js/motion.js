@@ -130,7 +130,9 @@
       }
       return sz;
     }
-    let step = 0, placed = false;
+    // ?method-step=N pins the diagram to one step (used to check each step's final layout)
+    const pinned = new URLSearchParams(location.search).get("method-step");
+    let step = pinned ? Math.max(0, Math.min(4, +pinned)) : 0, placed = false;
     const caps = [
       "40 patients × 6 samples",
       `random 20% of samples → ${leaked} of 40 patients sit on both sides`,
@@ -140,7 +142,7 @@
     ];
     const rail = document.querySelectorAll(".rail a");
     const so = new IntersectionObserver(es => es.forEach(e => {
-      if (!e.isIntersecting) return;
+      if (!e.isIntersecting || pinned) return;
       step = +e.target.dataset.step;
       rail.forEach((a, i) => a.classList.toggle("on", i === step));
       if (reduce) draw(performance.now());
