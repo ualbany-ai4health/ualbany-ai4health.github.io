@@ -9,7 +9,7 @@ stages:
       - { name: "Medical imaging", note: "MRI, CT, US, X-ray, histopathology, OCT" }
       - { name: "Physiological signals", note: "EEG, ECG, EMG, PPG" }
       - { name: "Wearables & IoMT", note: "activity, vitals, sensors" }
-      - { name: "Patient-reported data", note: "PROMs, PREMs, behaviour" }
+      - { name: "Patient-reported data", note: "PROMs, PREMs, behavior" }
       - { name: "Environment & lifestyle", note: "exposome, social factors" }
   - title: "Knowledge & models"
     icon: graph
@@ -49,6 +49,6 @@ band:
 
 outcomes:
   - "Actionable clinical intelligence"
-  - "Personalised care"
+  - "Personalized care"
   - "Improved outcomes"
   - "Healthier communities"

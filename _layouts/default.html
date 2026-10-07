@@ -21,7 +21,7 @@
         <span class="mark-text"><b>AI<i>4</i>Health Lab</b><span>UALBANY · SUNY</span></span>
       </a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open menu">
-      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+      <label for="nav-toggle" class="nav-toggle-label"><span></span><b class="sr-only">Menu</b></label>
       <nav class="site-nav" aria-label="Main">
         {% for item in site.nav %}{% unless item.url == '/' %}
           <a href="{{ item.url | relative_url }}"{% if page.url contains item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
@@ -44,7 +44,7 @@
         {{ site.contact.department }}, CEHC<br>
         {{ site.contact.address }}
       </div>
-      {% if page.url == '/' %}<p class="data-credit">Sleep recording: <em>Sleep-EDF Database Expanded</em>, record SC4001E0 and its hypnogram (Kemp et al., <em>IEEE Trans. Biomed. Eng.</em> 47(9):1185–1194, 2000), from <a href="https://physionet.org/content/sleep-edfx/1.0.0/">PhysioNet</a> (<a href="https://doi.org/10.13026/C2X676">doi:10.13026/C2X676</a>; Pollard et al., <em>Nature Health</em>, 2026, <a href="https://doi.org/10.1038/s44360-026-00096-z">doi:10.1038/s44360-026-00096-z</a>). Open data, Open Data Commons Attribution License 1.0. We show short excerpts of one night from a healthy volunteer; stages were scored by sleep technicians, and spindle boxes come from a simple 11–16 Hz band-pass filter.</p>{% endif %}
+      {% if page.url == '/' %}<p class="data-credit">Sleep recording: <em>Sleep-EDF Database Expanded</em>, record SC4001E0 and its hypnogram (Kemp et al., <em>IEEE Trans. Biomed. Eng.</em> 47(9):1185–1194, 2000), from <a href="https://physionet.org/content/sleep-edfx/1.0.0/">PhysioNet</a> (<a href="https://doi.org/10.13026/C2X676">doi:10.13026/C2X676</a>; Pollard et al., <em>Nature Health</em>, 2026, <a href="https://doi.org/10.1038/s44360-026-00096-z">doi:10.1038/s44360-026-00096-z</a>). Open data under the <a href="https://opendatacommons.org/licenses/by/1-0/">Open Data Commons Attribution License 1.0</a>. The hero replays 24 short excerpts of one night, chosen to show every sleep stage, from a participant in the Sleep Cassette study of healthy adults, in real time. The signals are lightly high-pass filtered (0.3 Hz) and stored at 8-bit resolution; stages were scored by sleep technicians; spindle boxes (N2 only) come from a simple 11–16 Hz band-pass detector, not a trained model.</p>{% endif %}
       <div class="footer-links">
         <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
         <a href="https://github.com/{{ site.contact.github }}">GitHub</a>

@@ -13,10 +13,10 @@
   title: "Brain imaging"
   unit: "MRI · CT · 1 mm voxels"
   image: imaging.webp
-  short: "Alzheimer's, stroke and haemorrhage from scans, validated per patient, not per slice."
+  short: "Alzheimer's, stroke and hemorrhage from scans, validated per patient, not per slice."
   text: >-
     Deep learning models for brain MRI and CT, with a focus on Alzheimer's
-    disease, stroke and haemorrhage. We validate at the level of the patient
+    disease, stroke and hemorrhage. We validate at the level of the patient
     rather than the image slice, so that slices from one person never appear
     in both training and test data.
 - key: wearables
@@ -25,7 +25,7 @@
   image: wearables.webp
   short: "Stress and emotion from body-worn sensors, and how the hardware changes the answer."
   text: >-
-    Recognising emotional and stress states from wearable sensors such as ECG
+    Recognizing emotional and stress states from wearable sensors such as ECG
     and skin conductance, and auditing how the measurement hardware shapes the
     results.
 - key: neuro

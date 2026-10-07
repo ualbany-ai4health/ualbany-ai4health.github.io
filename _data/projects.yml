@@ -13,8 +13,8 @@
   summary: >-
     Depression shows up in many places at once: in EEG rhythms and sleep, in
     heart-rate variability and daily activity, in the voice and in the words a
-    person chooses. This project brings these streams together in one model
-    that reasons over a biomedical knowledge graph, so that detection, relapse
+    person chooses. This project aims to bring these streams together in one model that
+    reasons over a biomedical knowledge graph, so that detection, relapse
     warnings and treatment suggestions rest on more than a single signal.
   inputs:
     - "EEG and neurophysiological recordings from wearables"
@@ -24,7 +24,7 @@
   outputs:
     - "Depression detection and severity classification"
     - "Risk stratification and early warning of onset or relapse"
-    - "Symptom trajectory modelling over time"
+    - "Symptom trajectory modeling over time"
     - "Treatment response prediction and what-if analysis"
 
 - slug: cardiovascular
@@ -37,10 +37,9 @@
     One patient's ECG, imaging, genomics and lifestyle combined into a
     personal risk profile and treatment plan.
   summary: >-
-    Cardiovascular care still relies largely on population averages. We are
-    building a framework that harmonises clinical records, imaging, genomics,
+    We are building a framework that harmonizes clinical records, imaging, genomics,
     physiological signals and lifestyle data around a cardiovascular knowledge
-    graph, and uses graph neural networks, causal models and language models to
+    graph, and applies graph neural networks, causal models and language models to
     predict risk, disease progression and response to treatment for the
     individual patient.
   inputs:
@@ -50,8 +49,8 @@
     - "Genomics, proteomics and lifestyle factors"
   outputs:
     - "Cardiovascular risk prediction and early warning"
-    - "Disease subtyping and progression modelling"
-    - "Personalised treatment recommendations"
+    - "Disease subtyping and progression modeling"
+    - "Personalized treatment recommendations"
     - "Population-level identification of high-risk groups"
 
 - slug: emotion
@@ -61,11 +60,10 @@
   tags: ["EEG", "EMG", "ECG", "Face", "Speech"]
   diagram: emotion.webp
   short: >-
-    Recognising emotional state, its intensity and how it changes, from face,
+    Recognizing emotional state, its intensity and how it changes, from face,
     body signals, voice and text together.
   summary: >-
-    A single channel rarely tells the whole story of how someone feels. This
-    project aligns facial expression, EEG, EMG, ECG, skin conductance, speech
+    This project aligns facial expression, EEG, EMG, ECG, skin conductance, speech
     and language in time, and builds an emotion recognition engine that reports
     state, intensity and trajectory in context, as a basis for mental-health
     monitoring and emotion-aware human–AI interaction.
@@ -77,7 +75,7 @@
   outputs:
     - "Emotion classification with intensity"
     - "Temporal dynamics and early risk detection"
-    - "Personalised insights and recommendations"
+    - "Personalized insights and recommendations"
     - "Support for mental-health monitoring and clinicians"
 
 - slug: cardio-twin
@@ -88,14 +86,16 @@
   tags: ["Digital twin", "Edge computing", "ECG", "Privacy"]
   diagram: cardio-twin.webp
   short: >-
-    A patient-specific virtual heart that runs close to the patient, updated
-    in real time from wearables and used to test treatments before they are given.
+    A patient-specific virtual heart planned to run close to the patient,
+    updated in real time from wearables, and intended to test treatments
+    before they are given.
   summary: >-
     A digital twin is a computer model of one person's heart that is kept up
-    to date with their own data. Cardio Twin processes physiological signals at
-    the edge, on or near the patient's devices, so that monitoring is fast and
-    data stays private, and uses the twin to simulate disease progression,
-    virtual stress tests and treatment responses before they reach the patient.
+    to date with their own data. Cardio Twin is designed to process
+    physiological signals at the edge, on or near the patient's devices, with
+    privacy and security in mind, and to use the twin to simulate disease
+    progression, virtual stress tests and treatment responses before they
+    reach the patient.
   inputs:
     - "Real-time ECG, PPG, blood pressure and heart-rate variability"
     - "Echocardiography, MRI and CT"
@@ -118,11 +118,11 @@
     Moving, aiming, jumping and shooting in a game using only brain signals
     from a non-invasive EEG headset.
   summary: >-
-    A brain–computer interface turns brain activity into commands. Here a
+    A brain–computer interface turns brain activity into commands. The design: a
     player wears a non-invasive EEG headset; the signals are cleaned, turned
     into features and classified into intentions such as move, aim, jump or
-    rest, and the game responds in real time. Visual and auditory feedback
-    close the loop so the system adapts to each player, with potential uses in
+    rest, and the game is meant to respond in real time. Visual and auditory feedback
+    close the loop so the system can adapt to each player, with potential uses in
     neurorehabilitation and training.
   inputs:
     - "Multichannel EEG from a non-invasive headset (Fz, C3, Cz, C4, Pz)"

@@ -91,7 +91,7 @@
     const g = split.getContext("2d"), cap = document.getElementById("split-cap");
     let s = 20261006; const r = () => ((s = (s * 16807) % 2147483647) / 2147483647);
     const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-    const NP = 40, NS = 6, COND = "#a9c8f0", CTRL = "#2f6fd1", WARN = "#ff6b5e";
+    const NP = 40, NS = 6, COND = "#a9c8f0", CTRL = "#2f6fd1", WARN = "#ff6b5e";   // diagnosis keeps its colour in every step
     const pts = [];
     for (let i = 0; i < NP; i++) pts.push({ id: i, cond: i % 2 === 0, test: false, fold: -1 });
     // stratified patient-level split: 4 diagnosed + 4 controls sealed
@@ -108,7 +108,7 @@
     const trainP = pts.filter(p => !p.test).sort((a, b) => a.fold - b.fold || b.cond - a.cond);
     const testP = pts.filter(p => p.test).sort((a, b) => b.cond - a.cond);
 
-    const WALL = .7, TOP = .16, BOT = .86;
+    const WALL = .7, TOP = .16, BOT = .78;
     const tilePos = (col, row, x0, x1, cols, rows) => [x0 + (x1 - x0) * (col + .5) / cols, TOP + (BOT - TOP) * (row + .5) / rows];
     function layout(step, w, h) {
       const u = Math.min(w, h), sz = Math.max(4, u * .013), sp = sz * 1.55;
@@ -140,6 +140,7 @@
       "",
       "scored once, on the 8 sealed patients",
     ];
+    const narrow = () => split.clientWidth < 520;
     const rail = document.querySelectorAll(".rail a");
     const so = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting || pinned) return;
@@ -159,18 +160,19 @@
       samples.forEach(sm => { sm.x += (sm.t[0] - sm.x) * k; sm.y += (sm.t[1] - sm.y) * k; });
       placed = true;
       const fold = Math.floor(t / 1700) % 4;
-      cap.textContent = step === 3 ? `round ${fold + 1} of 4 · train on 24 patients, validate on 8` : caps[step];
+      cap.textContent = step === 3 ? `round ${fold + 1} of 4 · validate on 8` : caps[step];
 
       // legend
       g.fillStyle = COND; g.fillRect(w * .05, h * .055, 7, 7); label("DIAGNOSIS", w * .05 + 12, h * .055 + 7);
       g.fillStyle = CTRL; g.fillRect(w * .05 + 92, h * .055, 7, 7); label("CONTROL", w * .05 + 104, h * .055 + 7);
-      if (step === 1) { g.fillStyle = WARN; g.fillRect(w * .05 + 172, h * .055, 7, 7); label("LEAKED PATIENT", w * .05 + 184, h * .055 + 7); }
+      if (step === 1) { g.strokeStyle = WARN; g.lineWidth = 1.5; g.strokeRect(w * .05 + 173, h * .055 - 1, 8, 8); g.lineWidth = 1; label("LEAKED SAMPLE", w * .05 + 188, h * .055 + 7); }
+      if (step === 4) { g.strokeStyle = C.teal; g.strokeRect(w * .05 + 173, h * .055 - 1, 8, 8); label("SEALED TEST PATIENT", w * .05 + 188, h * .055 + 7); }
 
       if (step >= 1) {
         g.strokeStyle = step === 1 ? "rgba(255,107,94,.55)" : "rgba(16,214,194,.5)"; g.setLineDash([4, 6]);
         g.beginPath(); g.moveTo(w * WALL, h * .12); g.lineTo(w * WALL, h * .9); g.stroke(); g.setLineDash([]);
         label("TRAINING", w * .05, h * .12);
-        label(step >= 3 ? "TEST · SEALED" : "TEST", w * (WALL + .04), h * .12);
+        label(step >= 3 ? (narrow() ? "SEALED" : "TEST · SEALED") : "TEST", w * (WALL + .04), h * .12);
       }
       if (step === 3) {
         for (let f = 0; f < 4; f++) {
@@ -178,17 +180,17 @@
           const on = f === fold;
           g.strokeStyle = on ? C.teal : "rgba(169,200,240,.14)"; g.lineWidth = on ? 1.5 : 1;
           g.strokeRect(x0 + 3, h * (TOP - .015), x1 - x0 - 6, h * (BOT - TOP + .03)); g.lineWidth = 1;
-          label(on ? "VALIDATE" : "TRAIN", (x0 + x1) / 2, h * (BOT + .045), on ? C.teal : C.muted, "center");
+          label(on ? (narrow() ? "VAL." : "VALIDATE") : "TRAIN", (x0 + x1) / 2, h * (BOT + .06), on ? C.teal : C.muted, "center");
         }
       }
       samples.forEach(sm => {
         const p = sm.p;
         let col = p.cond ? COND : CTRL, a = .95;
-        if (step === 1 && p.leak) { col = WARN; a = sm.rnd ? 1 : .55; }
         if (step === 3 && p.test) a = .25;
         if (step === 3 && !p.test && p.fold !== fold) a = .5;
-        if (step === 4) { if (p.test) col = p.cond ? C.teal : "#0b8f84"; else a = .22; }
+        if (step === 4 && !p.test) a = .22;
         g.globalAlpha = a; g.fillStyle = col; g.fillRect(sm.x - sz / 2, sm.y - sz / 2, sz, sz);
+        if (step === 1 && p.leak && sm.rnd) { g.globalAlpha = 1; g.strokeStyle = WARN; g.lineWidth = 1.4; g.strokeRect(sm.x - sz / 2 - 1.5, sm.y - sz / 2 - 1.5, sz + 3, sz + 3); g.lineWidth = 1; }
       });
       g.globalAlpha = 1;
       if (step === 4) {

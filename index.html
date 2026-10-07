@@ -10,7 +10,7 @@ scripts:
     <div class="fade"></div>
     <div class="hero-copy">
       <div class="wrap">
-        <div class="pill"><i></i><span id="pill-epoch">REPLAY · REAL NIGHT · SLEEP-EDF</span></div>
+        <div class="pill"><i></i><span id="pill-epoch">LOADING THE RECORDING…</span></div>
         <h1>Teaching machines to read the body.</h1>
         <p class="lede">We build models that turn EEG, ECG, muscle and imaging data into clinical answers, and test them on patients they have never seen.</p>
       </div>
@@ -21,13 +21,13 @@ scripts:
     <div class="wrap">
       <div>
         <div class="ro-label">Stage scored by technicians</div>
-        <div class="ro-stage" id="stage">N2</div>
-        <div class="ro-conf" id="conf">expert hypnogram</div>
+        <div class="ro-stage" id="stage">–</div>
+        <div class="ro-conf" id="conf"></div>
       </div>
       <div class="hyp"><canvas id="hypc"></canvas></div>
       <div class="ro-meta">
-        <div id="clock">02:14:30</div>
-        <div id="epoch">epoch 269 / 960</div>
+        <div id="clock">–</div>
+        <div id="epoch"></div>
       </div>
     </div>
   </div>
@@ -37,11 +37,11 @@ scripts:
   <div class="wrap">
     <p class="kicker">Research</p>
     <h2 class="section-title focus">Six kinds of data, one standard of <span class="teal">evidence.</span></h2>
-    <p class="intro">Every model we build is tested on patients, hospitals or devices it has never seen, because that is where clinical AI usually breaks.</p>
+    <p class="intro">Our standard is to test models on patients, hospitals or devices they have never seen, because that is where clinical AI usually breaks.</p>
     <div class="tiles">
       {% for r in site.data.research %}
       <a class="tile scanned" href="{{ '/research/' | relative_url }}#{{ r.key }}">
-        <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" decoding="async">
+        <img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" decoding="async"{% if forloop.index > 2 %} loading="lazy"{% endif %}>
         <span class="scan"></span>
         <div class="tile-body">
           <span class="unit">{{ r.unit }}</span>

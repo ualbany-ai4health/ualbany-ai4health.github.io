@@ -40,5 +40,5 @@
 </div>
 {% endif %}
 {% if f.outcomes %}
-<ol class="eco-out">{% for o in f.outcomes %}<li>{{ o }}</li>{% endfor %}</ol>
+<ol class="eco-out" style="--n: {{ f.outcomes.size }}">{% for o in f.outcomes %}<li>{{ o }}</li>{% endfor %}</ol>
 {% endif %}

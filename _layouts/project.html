@@ -22,7 +22,7 @@ layout: default
           <ul>{% for i in p.inputs %}<li>{{ i }}</li>{% endfor %}</ul>
         </div>
         <div>
-          <h2>What it delivers</h2>
+          <h2>What it is meant to deliver</h2>
           <ul>{% for o in p.outputs %}<li>{{ o }}</li>{% endfor %}</ul>
         </div>
       </div>
@@ -36,8 +36,9 @@ layout: default
   <div class="wrap">
     <p class="kicker">Overview</p>
     <h2 class="section-title focus">The full <span class="teal">picture.</span></h2>
-    <p class="intro">{{ fl.intro | default: "From the data that goes in to what comes out." }}</p>
+    <p class="intro">{{ fl.intro | default: "From the data that goes in to what comes out." }} <span class="planned">Planned framework; no results are reported here.</span></p>
     {% if fl %}{% include flow.html f=fl label="Overview of the project, from data to outcomes" %}{% endif %}
+    <p class="credit">Illustrations generated with ChatGPT for the AI4Health Lab. They depict research themes, not study data.</p>
     <p class="eco-foot figure-links">
       <a class="eco-orig" href="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" target="_blank" rel="noopener">Original overview figure ↗</a>
       {% if p.image %}<a class="eco-orig" href="{{ '/assets/img/projects/' | append: p.image | relative_url }}" target="_blank" rel="noopener">Illustration ↗</a>{% endif %}

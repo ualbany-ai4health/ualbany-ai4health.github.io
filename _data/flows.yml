@@ -8,31 +8,31 @@ depression:
       icon: data
       items:
         - { name: "EEG & neurophysiology", note: "frequency bands, connectivity, sleep patterns, neural biomarkers" }
-        - { name: "Physiology & behaviour", note: "HRV, activity and sleep, skin conductance, daily routines" }
+        - { name: "Physiology & behavior", note: "HRV, activity and sleep, skin conductance (EDA) and temperature, daily routines" }
         - { name: "Clinical & multi-omics", note: "EHR, genomics, metabolomics, psychometric scales, medication history" }
         - { name: "Speech & language", note: "prosody, voice quality, linguistic features, daily-life audio" }
         - { name: "Text & context", note: "clinical notes, transcripts, written language, social media with consent" }
-    - title: "Harmonise & reason"
+    - title: "Harmonize & reason"
       icon: engine
-      core: { title: "Multimodal AI engine", sub: "Reasoning · learning · personalisation" }
+      core: { title: "Multimodal AI engine", sub: "Reasoning · learning · personalization" }
       chips_title: "Inside the engine"
-      chips: ["Biomedical knowledge graph", "Graph neural networks", "Neuro-symbolic & causal AI", "Language & multimodal models", "Dynamic patient modelling"]
+      chips: ["Biomedical knowledge graph", "Graph neural networks", "Neuro-symbolic & causal AI", "Language & multimodal models", "Dynamic patient modeling"]
     - title: "Analysis & prediction"
       icon: predict
       items:
         - { name: "Detection & classification", note: "mild, moderate, severe" }
         - { name: "Risk stratification & early warning", note: "onset, relapse, suicidal risk" }
-        - { name: "Symptom trajectory modelling", note: "longitudinal prediction" }
+        - { name: "Symptom trajectory modeling", note: "longitudinal prediction" }
         - { name: "Biomarker & subtype discovery", note: "multimodal, patient-specific" }
         - { name: "Treatment response prediction", note: "medication, psychotherapy, neuromodulation" }
         - { name: "What-if & counterfactual analysis" }
-    - title: "Personalised interventions"
+    - title: "Personalized interventions"
       icon: intervene
       items:
         - { name: "Targeted treatment recommendations" }
         - { name: "Digital therapeutics", note: "mindfulness, CBT, neuromodulation" }
         - { name: "Real-time monitoring & adaptive support", note: "wearables and mobile apps" }
-        - { name: "Personalised feedback & early alerts" }
+        - { name: "Personalized feedback & early alerts" }
         - { name: "Context-aware interventions", note: "lifestyle, sleep, activity, environment" }
         - { name: "Clinician decision support", note: "evidence-based, explainable" }
   loop:
@@ -41,7 +41,7 @@ depression:
   band:
     title: "Trustworthy, secure & ethical AI"
     chips: ["Privacy & data security", "Fairness & bias mitigation", "Explainability", "Robustness & reliability", "Regulatory compliance & ethics"]
-  outcomes: ["Early, accurate detection", "Personalised care", "Improved outcomes", "Better mental health"]
+  outcomes: ["Early, accurate detection", "Personalized care", "Improved outcomes", "Scalable & equitable solutions", "Better mental health"]
 
 cardiovascular:
   intro: "From one patient's heart data to decisions for that patient, and to prevention for whole populations."
@@ -54,30 +54,30 @@ cardiovascular:
         - { name: "Imaging", note: "echocardiography, MRI, CT, ultrasound, angiography, radiomics" }
         - { name: "Physiological signals", note: "ECG, PPG, blood pressure, HRV, remote monitoring" }
         - { name: "Lifestyle & environment", note: "diet, activity, stress, sleep, air pollution, socioeconomic factors" }
-    - title: "Harmonise & connect"
+    - title: "Harmonize & connect"
       icon: graph
       items:
-        - { name: "Standardisation & de-identification" }
+        - { name: "Standardization & de-identification" }
         - { name: "Cross-modal fusion" }
         - { name: "Real-time & longitudinal data" }
         - { name: "Cardiovascular knowledge graph", note: "phenotypes, biomarkers, mechanisms, guidelines, patient similarity" }
     - title: "AI-driven CVD intelligence"
       icon: engine
-      core: { title: "CVD intelligence", sub: "Reasoning · prediction · personalisation" }
+      core: { title: "CVD intelligence", sub: "Reasoning · prediction · personalization" }
       chips_title: "Models"
       chips: ["Graph neural networks", "Neuro-symbolic & causal AI", "Language & multimodal models", "Patient & disease digital twin"]
-      chips2_title: "Predictive modelling"
+      chips2_title: "Predictive modeling"
       chips2: ["Early detection", "Disease progression", "Treatment response", "What-if analysis"]
     - title: "Care & prevention"
       icon: support
       items:
         - { name: "Clinical decision support", note: "risk prediction, early warning, subtyping, explainable insights" }
-        - { name: "Personalised management", note: "targeted therapy, lifestyle advice, remote monitoring and alerts" }
+        - { name: "Personalized management", note: "targeted therapy, lifestyle advice, remote monitoring and alerts" }
         - { name: "Population health & precision prevention", note: "risk stratification at scale, high-risk groups, equitable care" }
   band:
     title: "Trustworthy, responsible & secure AI"
     chips: ["Privacy & data security", "Fairness & bias mitigation", "Explainability", "Human in the loop", "Robustness & reliability", "Regulatory compliance & ethics"]
-  outcomes: ["Earlier detection", "Personalised care", "Improved outcomes", "Healthier communities"]
+  outcomes: ["Earlier detection", "Personalized care", "Improved outcomes", "Scalable & equitable solutions", "Healthier communities"]
 
 emotion:
   intro: "From face, body signals, voice and words to an emotional state a clinician or a system can act on."
@@ -90,32 +90,32 @@ emotion:
         - { name: "Audio", note: "speech signal, prosody, voice quality, speaking rate" }
         - { name: "Text", note: "written language, sentiment, notes and diaries" }
         - { name: "Context", note: "activity, social interaction, location, time" }
-    - title: "Harmonise & align"
+    - title: "Harmonize & align"
       icon: processing
       items:
         - { name: "Preprocessing" }
         - { name: "Temporal synchronisation" }
         - { name: "Feature fusion" }
         - { name: "Missing-data handling" }
-        - { name: "Emotion knowledge graph", note: "brain–body signals, behaviour, context, interventions" }
+        - { name: "Emotion knowledge graph", note: "brain–body signals, behavior, context, interventions" }
     - title: "Recognition engine"
       icon: engine
       core: { title: "Emotion engine", sub: "State · intensity · trajectory · context" }
       chips_title: "Models"
       chips: ["Deep multimodal learning", "CNN & transformer", "Graph learning", "Neuro-symbolic & causal AI"]
       chips2_title: "Analysis"
-      chips2: ["Emotion classification", "Temporal & context analysis", "Personalised insight", "Early risk detection"]
+      chips2: ["Emotion classification (happiness, sadness, anger, fear, neutral)", "Temporal & context analysis (dynamics, early risk detection)", "Personalized insight & recommendation"]
     - title: "Applications"
       icon: intervene
       items:
         - { name: "Mental health monitoring", note: "depression, anxiety, stress; relapse warning" }
-        - { name: "Personalised intervention", note: "adaptive digital therapeutics, behaviour change" }
+        - { name: "Personalized intervention", note: "adaptive digital therapeutics, behavior change" }
         - { name: "Clinical decision support", note: "emotion profiling, treatment response monitoring" }
         - { name: "Human–AI interaction", note: "emotion-aware conversational AI, assistive robots" }
   band:
     title: "Trustworthy, responsible & ethical AI"
     chips: ["Privacy & security", "Fairness & bias mitigation", "Explainability", "Robustness & reliability", "Human in the loop", "Regulatory compliance & ethics"]
-  outcomes: ["Early detection", "Personalised care", "Improved outcomes", "Healthier lives"]
+  outcomes: ["Early detection", "Personalized care", "Improved outcomes", "Scalable solutions", "Healthier individuals & communities"]
 
 cardio-twin:
   intro: "From wearable signals processed at the edge to a living model of one patient's heart."
@@ -131,8 +131,8 @@ cardio-twin:
     - title: "Edge processing"
       icon: edge
       items:
-        - { name: "Standardisation" }
-        - { name: "De-identification", note: "data stays close to the patient" }
+        - { name: "Standardization" }
+        - { name: "De-identification" }
         - { name: "Noise reduction" }
         - { name: "Feature extraction" }
         - { name: "Real-time streaming & learning" }
@@ -140,21 +140,21 @@ cardio-twin:
       icon: twin
       core: { title: "Cardio Twin", sub: "A digital twin of one patient's heart" }
       chips_title: "What the twin does"
-      chips: ["Personalised anatomy & physiology", "Multi-scale modelling", "Disease progression simulation", "Treatment response prediction", "What-if analysis", "Virtual stress testing", "Risk stratification", "Digital biomarkers"]
+      chips: ["Cardiovascular knowledge graph", "Personalized anatomy & physiology", "Multi-scale modeling", "Disease progression simulation", "Treatment response prediction", "What-if analysis", "Virtual stress testing", "Risk stratification", "Digital biomarkers"]
       chips2_title: "Agents"
       chips2: ["Monitoring", "Prediction", "Simulation", "Treatment", "Care coordination"]
     - title: "Clinical applications"
       icon: support
       items:
         - { name: "Real-time monitoring & early warning", note: "continuous risk, anomaly alerts" }
-        - { name: "Personalised treatment planning", note: "drug therapy, lifestyle, adaptive strategies" }
+        - { name: "Personalized treatment planning", note: "drug therapy, lifestyle, adaptive strategies" }
         - { name: "Precision risk stratification", note: "patient-specific risk profiles" }
         - { name: "Clinical decision support", note: "evidence-based, interpretable, clinician in the loop" }
         - { name: "Patient engagement & remote care", note: "feedback, coaching, self-management" }
   band:
     title: "Trustworthy, secure & responsible AI"
     chips: ["Privacy & security (federated learning)", "Fairness & bias mitigation", "Explainability", "Robustness & reliability", "Human in the loop", "Regulatory compliance & ethics"]
-  outcomes: ["Earlier detection", "Personalised care", "Improved outcomes", "Healthier hearts"]
+  outcomes: ["Earlier detection", "Personalized care", "Improved outcomes", "Scalable solutions", "Healthier individuals & communities"]
 
 bci-game:
   intro: "From brain signals to game actions, and back to the player as feedback."
@@ -172,17 +172,17 @@ bci-game:
         - { name: "Mental-state decoding", note: "intention, attention, motor imagery" }
     - title: "Intent recognition"
       icon: loop
-      core: { title: "BCI system", sub: "Real-time · adaptive · personalised" }
+      core: { title: "BCI system", sub: "Real-time · adaptive · personalized" }
       chips_title: "Classified intentions"
       chips: ["Move", "Aim", "Jump", "Shoot", "Idle / rest"]
     - title: "Game control"
       icon: intervene
       items:
         - { name: "Real-time command execution", note: "decoded intentions become game actions" }
-        - { name: "Visual & auditory feedback", note: "the player sees and hears the result" }
+        - { name: "Game actions", note: "move, aim, jump, shoot" }
   loop:
     title: "Closed loop: feedback & adaptation"
-    steps: ["Performance feedback", "Adaptive learning per player", "Neurofeedback", "Back to the player"]
+    steps: ["Visual & auditory feedback", "Performance feedback (speed, accuracy, success rate)", "Adaptive learning per player", "Neurofeedback"]
   band:
     title: "Key advantages"
-    chips: ["Real-time, hands-free control", "Personalised & adaptive", "Non-invasive & safe", "Potential for neurorehabilitation & training"]
+    chips: ["Real-time game control", "Hands-free interaction", "Personalized & adaptive", "Non-invasive & safe", "Immersive gaming experience", "Potential for neurorehabilitation & training"]

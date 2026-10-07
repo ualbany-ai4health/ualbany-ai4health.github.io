@@ -1,4 +1,5 @@
 ---
+description: "Research of the AI4Health Lab at the University at Albany: machine learning for sleep and biosignals, brain imaging, wearables, neurodegeneration, language models for health and population health."
 layout: page
 title: Research
 kicker: Research
@@ -8,7 +9,7 @@ permalink: /research/
 head_class: deep
 lead: >-
   We develop machine learning methods for health data and put as much effort
-  into validation as into modelling, so that results carry over to patients a
+  into validation as into modeling, so that results carry over to patients a
   model has never seen.
 ---
 <section class="section deep big-picture" id="ecosystem">
@@ -36,7 +37,7 @@ lead: >-
           <h2>{{ r.title }}</h2>
           <p>{{ r.text }}</p>
         </div>
-        <div class="theme-img scanned"><span class="scan"></span><img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" decoding="async"></div>
+        <div class="theme-img scanned"><span class="scan"></span><img src="{{ '/assets/img/research/' | append: r.image | relative_url }}" alt="" decoding="async"{% if forloop.index > 1 %} loading="lazy"{% endif %}></div>
       </article>
       {% endfor %}
     </div>
@@ -53,11 +54,11 @@ lead: >-
         <a href="#step-record" class="on">Record</a><a href="#step-mistake">The trap</a><a href="#step-split">Split</a><a href="#step-tune">Tune</a><a href="#step-test">Test</a>
       </nav>
       <div>
-        <div class="step" id="step-record" data-step="0"><span class="unit">Step 1 · Record</span><h3>Every sample keeps its patient's ID.</h3><p>In this sketch, forty people with six recordings each. In a real study it is thousands of 30-second sleep epochs or MRI slices per person, and half the cohort may share a diagnosis. No sample ever loses track of whose body it came from.</p></div>
-        <div class="step" id="step-mistake" data-step="1"><span class="unit">Step 2 · The trap</span><h3>Shuffling samples leaks people into the test set.</h3><p>Split the samples at random and most patients end up on both sides. A model can then score well by recognising a person's signal or anatomy rather than the disease, and the number collapses on the next hospital's patients. It is a common way reported accuracy gets inflated.</p></div>
-        <div class="step" id="step-split" data-step="2"><span class="unit">Step 3 · Split</span><h3>Split by person, balanced by diagnosis.</h3><p>Whole patients go to the test group, with the same share of patients and controls as the full cohort. Every sample of a test patient is sealed away before any modelling starts.</p></div>
-        <div class="step" id="step-tune" data-step="3"><span class="unit">Step 4 · Tune</span><h3>Every choice is made inside training.</h3><p>Architecture, features and thresholds are chosen by cross-validation over the training patients only: in each round one fold of patients checks a model trained on the others. Folds, too, are split by person.</p></div>
-        <div class="step" id="step-test" data-step="4"><span class="unit">Step 5 · Test</span><h3>The score comes from strangers.</h3><p>The final model is scored once, on the sealed patients. With small cohorts we rotate the sealed group as well, which is nested cross-validation, and report the spread across rounds, not only the best one.</p></div>
+        <div class="step" id="step-record" data-step="0"><span class="unit">Step 1 · Record</span><h3>Every sample keeps its patient's ID.</h3><p>In this illustrative sketch: forty people with six recordings each. A real study has thousands of 30-second sleep epochs or MRI slices per person, and its cohort is usually larger. No sample ever loses track of whose body it came from.</p></div>
+        <div class="step" id="step-mistake" data-step="1"><span class="unit">Step 2 · The trap</span><h3>Shuffling samples leaks people into the test set.</h3><p>Split the samples at random and most patients end up on both sides. A model can then score well by recognizing a person's signal or anatomy rather than the disease, and the number drops on new patients or new sites. It is a common way for reported accuracy to be inflated.</p></div>
+        <div class="step" id="step-split" data-step="2"><span class="unit">Step 3 · Split</span><h3>Split by person, balanced by diagnosis.</h3><p>Whole patients go to the test group, with the same share of diagnosed patients and controls as the full cohort. Every sample of a test patient is sealed away before any modeling starts.</p></div>
+        <div class="step" id="step-tune" data-step="3"><span class="unit">Step 4 · Tune</span><h3>Every choice is made inside training.</h3><p>Architecture, features, thresholds and preprocessing (such as normalization) are chosen and fitted on training patients only, by cross-validation: in each round one fold of patients checks a model trained on the others. The folds are split by person, too.</p></div>
+        <div class="step" id="step-test" data-step="4"><span class="unit">Step 5 · Test</span><h3>The score comes from strangers.</h3><p>The final model is scored once, on the sealed patients. Eight patients give a wide margin of error, so with small cohorts we repeat the whole procedure with a different sealed group each round (nested cross-validation, where tuning happens only inside each round's training patients) and report the spread across rounds.</p></div>
       </div>
       <div class="stage"><canvas id="split" role="img" aria-label="Forty patients with six samples each: a random sample split leaks patients into the test set; a patient-level, stratified split does not"></canvas><div class="cap" id="split-cap">40 patients × 6 samples</div></div>
     </div>

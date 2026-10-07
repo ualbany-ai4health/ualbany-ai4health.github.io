@@ -18,6 +18,8 @@
 
   fetch(dataUrl).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(start).catch(() => {
     if (note) note.textContent = "RECORDING UNAVAILABLE";
+    ["stage", "conf", "clock", "epoch"].forEach(id => { const el = $(id); if (el) el.textContent = "–"; });
+    const pill = $("pill-epoch"); if (pill) pill.textContent = "RECORDING UNAVAILABLE";
   });
 
   function start(D) {
@@ -30,7 +32,7 @@
     const p95 = a => { const s = a.map(Math.abs).sort((x, y) => x - y); return s[Math.floor(s.length * .95)] || 1; };
     const respMed = ex.map(e => { const s = [...e.resp].sort((x, y) => x - y); return s[22]; });
     const SC = {
-      eeg: 55 / D.eeg_step_uv,                            // 55 uV fills a lane's half-height
+      eeg: 65 / D.eeg_step_uv,                            // 65 uV reaches 64% of a lane's half-height; larger peaks are clipped at 1.4 units
       eog: 120 / D.eog_step_uv,
       emg: Math.max(1e-6, p95(ex.flatMap(e => e.emg))),
       resp: p95(ex.flatMap((e, i) => e.resp.map(v => v - respMed[i]))),
@@ -47,7 +49,8 @@
 
     // ?psg-excerpt=N pins the replay to excerpt N, paused (used to check each stage's final picture)
     const pin = new URLSearchParams(location.search).get("psg-excerpt");
-    let W, H, k = pin ? Math.max(0, Math.min(ex.length - 1, +pin)) : 0, t = reduce || pin ? 30 : PRE, last = performance.now(), fade = 1;
+    const pinN = pin === null ? NaN : parseInt(pin, 10), pinned = Number.isFinite(pinN);
+    let W, H, k = pinned ? Math.max(0, Math.min(ex.length - 1, pinN)) : 0, t = reduce || pinned ? 30 : PRE, last = performance.now(), fade = 1;
     function size() {
       const d = Math.min(2, window.devicePixelRatio || 1);
       W = cv.clientWidth; H = cv.clientHeight;
@@ -80,7 +83,7 @@
       }
       const tl = t - WIN;                                    // window start, excerpt time
       cx.font = "500 11px 'IBM Plex Mono', monospace";
-      for (const [a, b] of e.spindles) {
+      if (STAGES[hyp[e.e]] === "N2") for (const [a, b] of e.spindles) {   // threshold was calibrated on N2 only
         if (b < tl || a > t) continue;
         const ax = x0 + span * (Math.max(a, tl) - tl) / WIN, bx = x0 + span * (Math.min(b, t) - tl) / WIN, y = top + lane * .5;
         cx.fillStyle = "rgba(16,214,194,.12)"; cx.fillRect(ax, y - lane * .48, bx - ax, lane * .96);
@@ -136,7 +139,7 @@
 
     let visible = true;
     new IntersectionObserver(en => { visible = en[0].isIntersecting; }).observe(cv);
-    const SPEED = 1.6;                                      // recording seconds per real second
+    const SPEED = 1;                                        // shown in real time
     function loop(now) {
       const dt = Math.min(.1, (now - last) / 1000) * SPEED; last = now;
       if (visible) {
@@ -149,6 +152,6 @@
     }
     draw();
     if (document.fonts) document.fonts.ready.then(draw);
-    if (!reduce && !pin) requestAnimationFrame(loop);
+    if (!reduce && !pinned) requestAnimationFrame(loop);
   }
 })();
