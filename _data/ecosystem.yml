@@ -18,16 +18,9 @@ stages:
       - { name: "Large language & multimodal models", note: "clinical reasoning, generative and conversational AI" }
       - { name: "Cognitive digital twin & NeuroTwin", note: "patient-specific simulation, virtual trials" }
   - title: "Agentic AI"
-    core: "Reasoning · learning · planning · action"
-    items:
-      - { name: "Data agent" }
-      - { name: "Risk agent" }
-      - { name: "Diagnosis agent" }
-      - { name: "Treatment agent" }
-      - { name: "Monitoring agent" }
-      - { name: "Patient engagement agent" }
-      - { name: "Research & discovery agent" }
-      - { name: "System coordination agent" }
+    core: { title: "Agentic AI", sub: "Reasoning · learning · planning · action" }
+    chips_title: "Multi-agent framework"
+    chips: ["Data agent", "Risk agent", "Diagnosis agent", "Treatment agent", "Monitoring agent", "Patient engagement agent", "Research & discovery agent", "System coordination agent"]
   - title: "Applications & impact"
     items:
       - { name: "Oncology", note: "TNBC, EOBC" }
@@ -39,7 +32,9 @@ stages:
       - { name: "Healthcare cybersecurity", note: "IoMT, critical infrastructure" }
       - { name: "Global & equitable health", note: "underserved populations" }
 
-trust:
+band:
+  title: "Trustworthy AI & responsible innovation, at every stage"
+  chips:
   - "Privacy & security"
   - "Fairness & bias mitigation"
   - "Explainability"

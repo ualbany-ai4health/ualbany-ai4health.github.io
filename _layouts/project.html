@@ -31,22 +31,16 @@ layout: default
   </div>
 </section>
 
+{% assign fl = site.data.flows[page.slug] %}
 <section class="section deep figures">
   <div class="wrap">
     <p class="kicker">Overview</p>
     <h2 class="section-title focus">The full <span class="teal">picture.</span></h2>
-    <p class="intro">The project's overview figure, with every data source, model and outcome on one page.</p>
-    <div class="figure-row">
-      <a class="figure-card" href="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" target="_blank" rel="noopener">
-        <span class="figure-frame"><img src="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" alt="Overview figure of {{ p.title }}" decoding="async"></span>
-        <span class="figure-cap">Overview figure <b>Open full size ↗</b></span>
-      </a>
-      {% if p.image %}
-      <a class="figure-card" href="{{ '/assets/img/projects/' | append: p.image | relative_url }}" target="_blank" rel="noopener">
-        <span class="figure-frame"><img src="{{ '/assets/img/projects/' | append: p.image | relative_url }}" alt="Illustration of {{ p.title }}" decoding="async"></span>
-        <span class="figure-cap">Illustration <b>Open full size ↗</b></span>
-      </a>
-      {% endif %}
-    </div>
+    <p class="intro">From the data that goes in to what reaches patients and clinicians.</p>
+    {% if fl %}{% include flow.html f=fl label="Overview of the project, from data to outcomes" %}{% endif %}
+    <p class="eco-foot figure-links">
+      <a class="eco-orig" href="{{ '/assets/img/projects/' | append: p.diagram | relative_url }}" target="_blank" rel="noopener">Original overview figure ↗</a>
+      {% if p.image %}<a class="eco-orig" href="{{ '/assets/img/projects/' | append: p.image | relative_url }}" target="_blank" rel="noopener">Illustration ↗</a>{% endif %}
+    </p>
   </div>
 </section>

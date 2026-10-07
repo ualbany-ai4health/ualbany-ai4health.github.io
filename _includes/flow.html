@@ -1,0 +1,43 @@
+{% comment %}
+  A left-to-right flow of stages, used for the ecosystem and every project overview.
+  include.f: { stages: [{title, items:[{name,note}], core:{title,sub}, chips_title, chips:[]}],
+               loop: {title, steps:[]}, band: {title, chips:[]}, outcomes: [] }
+{% endcomment %}
+{% assign f = include.f %}
+<div class="eco" aria-label="{{ include.label }}">
+  {% for st in f.stages %}
+  <div class="eco-col{% if st.core %} eco-core{% endif %}">
+    <p class="eco-step"><span>{{ forloop.index | prepend: '0' }}</span>{{ st.title }}</p>
+    {% if st.core %}<div class="eco-hub"><b>{{ st.core.title }}</b><span>{{ st.core.sub }}</span></div>{% endif %}
+    {% if st.items %}
+    <ul class="eco-list">
+      {% for it in st.items %}<li><b>{{ it.name }}</b>{% if it.note %}<span>{{ it.note }}</span>{% endif %}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if st.chips %}
+    {% if st.chips_title %}<p class="eco-sub">{{ st.chips_title }}</p>{% endif %}
+    <ul class="eco-agents">{% for c in st.chips %}<li>{{ c }}</li>{% endfor %}</ul>
+    {% endif %}
+    {% if st.chips2 %}
+    {% if st.chips2_title %}<p class="eco-sub">{{ st.chips2_title }}</p>{% endif %}
+    <ul class="eco-agents">{% for c in st.chips2 %}<li>{{ c }}</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+  {% unless forloop.last %}<div class="eco-link" aria-hidden="true"><i style="animation-delay: {{ forloop.index0 | times: 0.8 }}s"></i></div>{% endunless %}
+  {% endfor %}
+</div>
+{% if f.loop %}
+<div class="eco-trust eco-loop">
+  <p class="eco-step"><span>↻</span>{{ f.loop.title }}</p>
+  <ol>{% for s in f.loop.steps %}<li>{{ s }}</li>{% endfor %}</ol>
+</div>
+{% endif %}
+{% if f.band %}
+<div class="eco-trust">
+  <p class="eco-step"><span>✓</span>{{ f.band.title }}</p>
+  <ul>{% for t in f.band.chips %}<li>{{ t }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+{% if f.outcomes %}
+<ol class="eco-out">{% for o in f.outcomes %}<li>{{ o }}</li>{% endfor %}</ol>
+{% endif %}
