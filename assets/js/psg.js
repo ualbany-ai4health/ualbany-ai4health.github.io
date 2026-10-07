@@ -126,7 +126,7 @@
 
       const st = STAGES[hyp[cur]];
       $("stage").textContent = st;
-      $("conf").textContent = "scored by technicians";
+      $("conf").textContent = "expert hypnogram";
       const secs = D.start_clock_s + (D.window_first_epoch + cur) * 30 + Math.max(0, t - PRE);
       $("clock").textContent = [Math.floor(secs / 3600) % 24, Math.floor(secs / 60) % 60, Math.floor(secs) % 60].map(v => String(v).padStart(2, "0")).join(":");
       $("epoch").textContent = `epoch ${cur + 1} / ${NE}`;
