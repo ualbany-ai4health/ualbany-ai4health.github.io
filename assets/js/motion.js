@@ -163,16 +163,16 @@
       cap.textContent = step === 3 ? `round ${fold + 1} of 4 · validate on 8` : caps[step];
 
       // legend
-      g.fillStyle = COND; g.fillRect(w * .05, h * .055, 7, 7); label("DIAGNOSIS", w * .05 + 12, h * .055 + 7);
-      g.fillStyle = CTRL; g.fillRect(w * .05 + 92, h * .055, 7, 7); label("CONTROL", w * .05 + 104, h * .055 + 7);
-      if (step === 1) { g.strokeStyle = WARN; g.lineWidth = 1.5; g.strokeRect(w * .05 + 173, h * .055 - 1, 8, 8); g.lineWidth = 1; label("LEAKED SAMPLE", w * .05 + 188, h * .055 + 7); }
-      if (step === 4) { g.strokeStyle = C.teal; g.strokeRect(w * .05 + 173, h * .055 - 1, 8, 8); label("SEALED TEST PATIENT", w * .05 + 188, h * .055 + 7); }
+      g.fillStyle = COND; g.fillRect(w * .05, h * .055, 7, 7); label(narrow() ? "DIAG." : "DIAGNOSIS", w * .05 + 12, h * .055 + 7);
+      const lx = narrow() ? 62 : 92; g.fillStyle = CTRL; g.fillRect(w * .05 + lx, h * .055, 7, 7); label(narrow() ? "CTRL" : "CONTROL", w * .05 + lx + 12, h * .055 + 7);
+      if (step === 1) { g.strokeStyle = WARN; g.lineWidth = 1.5; const ox = narrow() ? 122 : 173; g.strokeRect(w * .05 + ox, h * .055 - 1, 8, 8); g.lineWidth = 1; label(narrow() ? "LEAKED" : "LEAKED SAMPLE", w * .05 + ox + 15, h * .055 + 7); }
+      if (step === 4) { const ox2 = narrow() ? 122 : 173; g.strokeStyle = C.teal; g.strokeRect(w * .05 + ox2, h * .055 - 1, 8, 8); label(narrow() ? "SEALED" : "SEALED TEST PATIENT", w * .05 + ox2 + 15, h * .055 + 7); }
 
       if (step >= 1) {
         g.strokeStyle = step === 1 ? "rgba(255,107,94,.55)" : "rgba(16,214,194,.5)"; g.setLineDash([4, 6]);
         g.beginPath(); g.moveTo(w * WALL, h * .12); g.lineTo(w * WALL, h * .9); g.stroke(); g.setLineDash([]);
-        label("TRAINING", w * .05, h * .12);
-        label(step >= 3 ? (narrow() ? "SEALED" : "TEST · SEALED") : "TEST", w * (WALL + .04), h * .12);
+        label("TRAINING", w * .05, h * (narrow() ? .15 : .12));
+        label(step >= 3 ? (narrow() ? "SEALED" : "TEST · SEALED") : "TEST", w * (WALL + .04), h * (narrow() ? .15 : .12));
       }
       if (step === 3) {
         for (let f = 0; f < 4; f++) {
